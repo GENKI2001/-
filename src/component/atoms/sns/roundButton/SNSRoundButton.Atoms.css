@@ -1,0 +1,18 @@
+
+.sns-round-button-atoms-small {
+  height: 30px !important;
+  width: 200px !important;
+  font-size: 14px !important;
+}
+
+.sns-round-button-atoms-medium {
+  height: 38px !important;
+  width: 240px !important;
+  font-size: 16px !important;
+}
+
+.sns-round-button-atoms-large {
+  height: 45px !important;
+  width: 350px !important;
+  font-size: 18px !important;
+}

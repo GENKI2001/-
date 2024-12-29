@@ -3,6 +3,7 @@ import useOpen from '../../hooks/useOpen';
 import PopoverAtoms from '../atoms/popover/Popover.Atoms';
 import PopupAtoms from '../atoms/popup/Popup.Atoms';
 import SelectorAtoms from '../atoms/selector/Selector.Atoms';
+import { FacebookRoundButtonAtoms } from '../atoms/sns/roundButton/SNSRoundButtonAtoms';
 import TextFieldAtoms from '../atoms/textfield/TextField.Atoms';
 import CircleFixedPinkButtonIons from '../ions/button/circle/pink/CircleFixedPinkButton.Ions';
 import CircleFixedPostButtonIons from '../ions/button/circle/pink/CircleFixedPostButton.Ions';
@@ -121,6 +122,12 @@ const HomeTemplate: React.FC<HomeTemplateProps> = () => {
           size="small"
         />
       </div>
+
+      <FacebookRoundButtonAtoms
+        onClick={() => {
+          console.log('onClick');
+        }}
+      />
 
       <PopupAtoms open={open} onClose={handleClose}>
         <TextFieldAtoms
