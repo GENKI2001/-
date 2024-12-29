@@ -27,7 +27,7 @@ const PopoverAtoms: React.FC<PopoverProps> = ({
   } = usePopover({ trigger });
 
   // アニメーションを制御するhooks
-  const { isVisible, isClosing } = useVisibleAnimation(open, 0);
+  const { isVisible, isClosing } = useVisibleAnimation(open, 200);
 
   return (
     <div className="popover-wrapper">
@@ -43,13 +43,15 @@ const PopoverAtoms: React.FC<PopoverProps> = ({
       >
         {children}
       </div>
-      <div
-        ref={popoverRef}
-        className={`popover-atoms popover-${placement} ${isClosing ? 'closing' : ''}`}
-        role="tooltip"
-      >
-        {content}
-      </div>
+      {isVisible && (
+        <div
+          ref={popoverRef}
+          className={`popover-atoms popover-${placement} ${isClosing ? 'closing' : ''}`}
+          role="tooltip"
+        >
+          {content}
+        </div>
+      )}
     </div>
   );
 };
