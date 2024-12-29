@@ -1,46 +1,50 @@
-# Getting Started with Create React App
+# 特殊 Atomic Design: 6層アーキテクチャ
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 依存関係の基本原則
 
-## Available Scripts
+1. 各層は指定された層にのみ依存可能
+2. 層の内部での依存・参照は禁止
+3. 層をスキップした依存は禁止(ions層は例外)
 
-In the project directory, you can run:
+## アーキテクチャの特徴
 
-### `npm start`
+- 通常のAtomic Designに **「Ions層」** を追加した6層構造
+- 各層の定義を厳密に定めることで、粒度の曖昧さという問題を解決
+- ions層とmolecules層を、コンポーネントのバッファとして機能させ、再利用性を向上させる
+- 明確な依存関係の定義による保守性の向上
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Atoms 層の定義と規則
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+**Atoms 層**は、分割不可能な最小単位のコンポーネントで構成される。
 
-### `npm test`
+### 依存関係
+- 依存: なし
+- 参照先: Ions 層のみ
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Ions 層の定義と規則
 
-### `npm run build`
+**Ions 層**は、Atoms層の具体化されたパターン(特定のデザイン、追加機能)で構成される。
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 依存関係
+- 依存: Atoms 層のみ
+- 参照先: Molecules層、Organisms 層 (スキップを許可)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Molecules 層の定義と規則
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Molecules 層**は、複数のIons層のコンポーネントにより構成される。
 
-### `npm run eject`
+### 依存関係
+- 依存: Ions 層のみ
+- 参照先: Organisms 層
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Organisms 層の定義と規則
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Organisms 層**は、複数のIons・Molecules層のコンポーネントにより構成されます。
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### 依存関係
+- 依存: Ions層、Molecules 層のみ
+- 参照先: Templates 層
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Templates 層の定義と規則
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Pages 層の定義と規則
