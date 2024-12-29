@@ -38,7 +38,7 @@
 
 .popup-atoms {
   background: white;
-  padding: 50px 30px;
+  padding: 20px 10px;
   border-radius: 8px;
   width: 300px;
   max-width: 90%;
@@ -46,6 +46,30 @@
   position: relative;
   transform: scale(0.8);
   animation: fadeInPopup 0.3s ease 0.1s forwards;
+}
+
+.popup-atoms.extra-small {
+  width: 300px;
+}
+
+.popup-atoms.small {
+  width: 350px;
+}
+
+.popup-atoms.normal {
+  width: 450px;
+}
+
+.popup-atoms.medium {
+  width: 550px;
+}
+
+.popup-atoms.large {
+  width: "90%";
+}
+
+.popup-atoms.extra-large {
+  width: "95%";
 }
 
 @keyframes fadeInPopup {

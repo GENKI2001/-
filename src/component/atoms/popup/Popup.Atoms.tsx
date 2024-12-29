@@ -2,14 +2,21 @@ import React, { ReactNode } from 'react';
 import { useVisibleAnimation } from '../../../hooks/usePopupAnimation';
 import { usePopupClose } from '../../../hooks/usePopupClose';
 import './Popup.Atoms.css';
+import { PopupSizeTypeAtoms } from './type/PopupSizeType.Atoms';
 
 interface PopupProps {
   open: boolean;
   onClose: () => void;
   children: ReactNode;
+  size?: PopupSizeTypeAtoms;
 }
 
-const PopupAtoms: React.FC<PopupProps> = ({ open, onClose, children }) => {
+const PopupAtoms: React.FC<PopupProps> = ({
+  open,
+  onClose,
+  children,
+  size = 'medium',
+}) => {
   // ドラッグしていなければhandleMouseUpのタイミングでonCloseを実行するhooks
   const { handleMouseDown, handleReset, handleMouseUp } =
     usePopupClose(onClose);
@@ -34,7 +41,7 @@ const PopupAtoms: React.FC<PopupProps> = ({ open, onClose, children }) => {
     >
       <div
         role="dialog"
-        className={`popup-atoms ${isClosing ? 'closing' : ''}`}
+        className={`popup-atoms ${size} ${isClosing ? 'closing' : ''}`}
         onMouseDown={(e) => {
           handleReset();
           e.stopPropagation();
