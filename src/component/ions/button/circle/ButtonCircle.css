@@ -1,0 +1,26 @@
+.button-circle {
+  border-radius: 50%;
+  display: flex;
+  font-weight: bold;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.button-circle.small {
+  width: 55px;
+  height: 55px;
+}
+
+.button-circle.medium {
+  width: 70px;
+  height: 70px;
+}
+
+.button-circle.large {
+  width: 100px;
+  height: 100px;
+}

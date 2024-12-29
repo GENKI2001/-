@@ -1,0 +1,62 @@
+.popover-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.popover-atoms {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 5px;
+  position: absolute;
+  opacity: 0;
+  animation: fadeInPopover 0.2s ease 0.1s forwards;
+  z-index: 1000;
+}
+
+@keyframes fadeInPopover {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.popover-atoms.closing {
+  opacity: 1;
+  animation: fadeOutPopover 0.2s ease 0.1s forwards;
+}
+
+@keyframes fadeOutPopover {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.popover-top {
+  bottom: 100%;
+  left: 50%;
+  transform: translate(-50%, 0); /* 初期状態 */
+}
+
+.popover-bottom {
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, 0); /* 初期状態 */
+}
+
+.popover-left {
+  right: 100%;
+  top: 50%;
+  transform: translate(0, -50%); /* 初期状態 */
+}
+
+.popover-right {
+  left: 100%;
+  top: 50%;
+  transform: translate(0, -50%); /* 初期状態 */
+}

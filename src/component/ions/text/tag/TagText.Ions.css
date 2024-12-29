@@ -1,0 +1,8 @@
+.tag-text-ions {
+  color: #383E86;
+  font-weight: 400;
+}
+
+.tag-text-ions.clickable:hover {
+  text-decoration: underline;
+}

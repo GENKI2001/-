@@ -1,0 +1,17 @@
+.img-logo-ions-small {
+  height: 40px;
+  object-fit: cover;  
+  box-sizing: border-box;  
+}
+
+.img-logo-ions-medium {
+  height: 55px;
+  object-fit: cover;  
+  box-sizing: border-box;  
+}
+
+.img-logo-ions-large {
+  height: 65px;
+  object-fit: cover;  
+  box-sizing: border-box;  
+}

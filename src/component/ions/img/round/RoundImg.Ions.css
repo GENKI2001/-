@@ -1,0 +1,6 @@
+.round-img-ions {
+  width: 100%;
+  object-fit: cover;  
+  box-sizing: border-box;  
+  border-radius: 5px;
+}

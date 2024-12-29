@@ -1,0 +1,61 @@
+.textfield-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.textfield-label {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.textfield-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px !important;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.textfield-input:focus {
+  border-color: #007bff;
+}
+
+.textfield-error-max-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+}
+
+.textfield-input-error {
+  border-color: #e74c3c;
+}
+
+.textfield-input-error:focus {
+  border-color: #e74c3c;
+}
+
+.textfield-error {
+  font-size: 12px;
+  color: #e74c3c;
+  margin-top: 5px;
+  flex: 1;
+  text-align: left; 
+}
+
+.textfield-counter {
+  font-size: 12px;
+  color: #333;
+  margin-top: 5px;
+  flex: 1;
+  text-align: right; 
+}
+
+.textfield-counter.max {
+  color: #e74c3c;
+}
+
+
+

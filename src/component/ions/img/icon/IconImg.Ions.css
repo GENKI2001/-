@@ -1,0 +1,33 @@
+.icon-img {
+  object-fit: cover;  
+  box-sizing: border-box;  
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.icon-img-ions-small {
+  width: 30px;
+  height: 30px;
+  font-size: 14px;
+}
+
+.icon-img-ions-medium {
+  width: 40px;
+  height: 40px;
+  font-size: 15px;
+}
+
+.icon-img-ions-large {
+  width: 50px;
+  height: 50px;
+  font-size: 16px;
+}
+
+.user-icon-text-ions{
+  background-color: rgb(170, 170, 170);
+  font-weight: bold;
+  color: white;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+}

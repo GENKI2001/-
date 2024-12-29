@@ -1,0 +1,58 @@
+.round-like-button-ions:not(:disabled) {
+  color: rgb(254, 89, 91);
+  border-color: rgb(254, 89, 91);
+  padding: 10px 30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+} 
+
+/* disabled時のスタイル */
+.round-like-button-ions:disabled {
+  padding: 10px 30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* 選択時のスタイル */
+.round-like-button-ions.selected:not(:disabled) {
+  background-color: rgb(254, 89, 91);
+  color: white;
+}
+
+.num-of-likes {
+  background-color: rgb(254, 89, 91);
+  padding: 2px 8px;
+  color: white;
+  display: flex;
+  justify-content: center; /* 水平方向の中央揃え */
+  align-items: center;     /* 垂直方向の中央揃え */
+  border-radius: 5px;     
+}
+
+/* 選択時のいいね数カウンターのスタイル */
+.round-like-button-ions.selected:not(:disabled) {
+  background-color: rgb(254, 89, 91);
+  color: white;
+}
+
+.num-of-likes.selected {
+  background-color: white;
+  color: rgb(254, 89, 91);
+}
+
+.num-of-likes.disabled {
+  background-color: grey;
+  color: white;
+}
+
+/* 選択時のいいね数カウンターのスタイル */
+.round-like-button-ions.selected:disabled .num-of-likes.disabled {
+  background-color: grey;
+  color: white;
+}
