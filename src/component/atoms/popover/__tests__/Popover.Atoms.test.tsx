@@ -9,7 +9,7 @@ describe('PopoverAtoms', () => {
     jest.clearAllTimers();
   });
 
-  it('子要素とコンテンツが正しくレンダリングされること', () => {
+  it('子要素が正しくレンダリングされること', () => {
     render(
       <PopoverAtoms content={<div>Popover Content</div>}>
         <button>Trigger</button>
@@ -17,12 +17,11 @@ describe('PopoverAtoms', () => {
     );
 
     expect(screen.getByText('Trigger')).toBeInTheDocument();
-    expect(screen.getByText('Popover Content')).toBeInTheDocument();
   });
 
   it('hover時にポップオーバーが表示されること', async () => {
     render(
-      <PopoverAtoms content={<div>Content</div>}>
+      <PopoverAtoms trigger="hover" content={<div>Content</div>}>
         <button>Trigger</button>
       </PopoverAtoms>,
     );
@@ -104,24 +103,24 @@ describe('PopoverAtoms', () => {
     expect(popover).toHaveClass('popover-atoms', 'popover-bottom', 'closing');
   });
 
-  it('異なるplacementが正しく適用されること', () => {
+  it('異なるplacementが正しく適用されること', async () => {
     const { rerender } = render(
-      <PopoverAtoms content={<div>Content</div>} placement="top">
+      <PopoverAtoms
+        content={<div>Content</div>}
+        trigger="click"
+        placement="top"
+      >
         <button>Trigger</button>
       </PopoverAtoms>,
     );
+    const trigger = screen.getByText('Trigger').parentElement!;
+    // ポップオーバーを開く
+    await act(async () => {
+      fireEvent.click(trigger);
+    });
 
     let popover = screen.getByRole('tooltip');
     expect(popover).toHaveClass('popover-atoms', 'popover-top');
-
-    rerender(
-      <PopoverAtoms content={<div>Content</div>} placement="bottom">
-        <button>Trigger</button>
-      </PopoverAtoms>,
-    );
-
-    popover = screen.getByRole('tooltip');
-    expect(popover).toHaveClass('popover-atoms', 'popover-bottom');
   });
 
   it('アクセシビリティ属性が正しく設定されること', () => {
@@ -139,12 +138,18 @@ describe('PopoverAtoms', () => {
     expect(trigger).toHaveAttribute('aria-haspopup', 'true');
   });
 
-  it('デフォルトのpropsが正しく適用されること', () => {
+  it('デフォルトのpropsが正しく適用されること', async () => {
     render(
       <PopoverAtoms content={<div>Content</div>}>
         <button>Trigger</button>
       </PopoverAtoms>,
     );
+
+    const trigger = screen.getByText('Trigger').parentElement!;
+    // ポップオーバーを開く
+    await act(async () => {
+      fireEvent.click(trigger);
+    });
 
     const popover = screen.getByRole('tooltip');
     expect(popover).toHaveClass('popover-atoms', 'popover-bottom');

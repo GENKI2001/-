@@ -15,7 +15,7 @@ export interface PopoverProps {
 const PopoverAtoms: React.FC<PopoverProps> = ({
   children,
   content,
-  trigger = 'hover',
+  trigger = 'click',
   placement = 'bottom',
 }) => {
   // ポップオーバーの表示・非表示を制御するhooks
