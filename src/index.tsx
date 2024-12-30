@@ -4,7 +4,9 @@ import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client
 import React from 'react';
 import { CookiesProvider } from 'react-cookie';
 import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
+import { store } from './redux/store';
 import AppRouter from './router';
 import './styles/index.css';
 
@@ -29,15 +31,17 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <PersistQueryClientProvider
-      client={queryClient}
-      persistOptions={persistOptions}
-    >
-      <CookiesProvider>
-        <BrowserRouter>
-          <AppRouter />
-        </BrowserRouter>
-      </CookiesProvider>
-    </PersistQueryClientProvider>
+    <Provider store={store}>
+      <PersistQueryClientProvider
+        client={queryClient}
+        persistOptions={persistOptions}
+      >
+        <CookiesProvider>
+          <BrowserRouter>
+            <AppRouter />
+          </BrowserRouter>
+        </CookiesProvider>
+      </PersistQueryClientProvider>
+    </Provider>
   </React.StrictMode>,
 );
