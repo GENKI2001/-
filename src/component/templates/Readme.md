@@ -12,7 +12,7 @@
 - **デザイン (CSS ファイル)** と **ロジック** を分離し、保守性を高めてください。
 
 ### 3. 依存先の制約
-- Templates 層のコンポーネントは、**Molecules・Ions 層**のみに依存します。
+- Templates 層のコンポーネントは、**Organisms・Molecules・Ions 層**に依存します。
 
 ### 4. 参照先の制約
 - Templates 層のコンポーネントは、**pages 層**のみに参照されます。

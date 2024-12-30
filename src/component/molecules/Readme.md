@@ -15,4 +15,4 @@
 - Molecules 層のコンポーネントは、**Ions 層**のみに依存します。
 
 ### 4. 参照先の制約
-- Molecules 層のコンポーネントは、**Organisms 層**に参照されます。
+- Molecules 層のコンポーネントは、**Templates・Organisms 層**に参照されます。
