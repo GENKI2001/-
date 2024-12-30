@@ -1,9 +1,12 @@
 import React from 'react';
 import useOpen from '../../hooks/useOpen';
-import PopoverAtoms from '../atoms/popover/Popover.Atoms';
+import CarouselAtoms from '../atoms/carousel/Carousel.Atoms';
 import PopupAtoms from '../atoms/popup/Popup.Atoms';
 import SelectorAtoms from '../atoms/selector/Selector.Atoms';
-import { FacebookRoundButtonAtoms } from '../atoms/sns/roundButton/SNSRoundButtonAtoms';
+import {
+  FacebookRoundButtonAtoms,
+  XRoundButton,
+} from '../atoms/sns/roundButton/SNSRoundButtonAtoms';
 import TextFieldAtoms from '../atoms/textfield/TextField.Atoms';
 import CircleFixedPinkButtonIons from '../ions/button/circle/pink/CircleFixedPinkButton.Ions';
 import CircleFixedPostButtonIons from '../ions/button/circle/pink/CircleFixedPostButton.Ions';
@@ -11,7 +14,6 @@ import FullRoundPurpleButtonIons from '../ions/button/fullRound/Purple/FullRound
 import FullRoundRegisterButtonIons from '../ions/button/fullRound/Purple/FullRoundRegisterButton.Ions';
 import FullRoundLoginButtonIons from '../ions/button/fullRound/White/FullRoundLoginButton.Ions';
 import FullRoundWhiteButtonIons from '../ions/button/fullRound/White/FullRoundWhiteButton.Ions';
-import RoundPurpleButtonIons from '../ions/button/round/Purple/RoundPurpleButton.Ions';
 import RoundLikeButtonIons from '../ions/button/round/White/RoundLikeButton.Ions';
 import RoundWhiteButtonIons from '../ions/button/round/White/RoundWhiteButton.Ions';
 import IconImgIons from '../ions/img/icon/IconImg.Ions';
@@ -33,29 +35,44 @@ const HomeTemplate: React.FC<HomeTemplateProps> = () => {
   const { open, handleOpen, handleClose } = useOpen();
   return (
     <>
-      <FullRoundRegisterButtonIons onClick={handleOpen} />
-      <FullRoundLoginButtonIons onClick={handleOpen} />
-      <FullRoundPurpleButtonIons size="medium" onClick={handleOpen}>
-        hello
-      </FullRoundPurpleButtonIons>
-      <FullRoundWhiteButtonIons size="medium" onClick={handleOpen}>
-        hello
-      </FullRoundWhiteButtonIons>
-      <RoundWhiteButtonIons onClick={handleOpen}>White</RoundWhiteButtonIons>
-
-      <PopoverAtoms content={<>hello world</>}>
-        <RoundPurpleButtonIons size="extra-large">Purple</RoundPurpleButtonIons>
-      </PopoverAtoms>
-
-      <RoundLikeButtonIons
-        selected
-        size="extra-large"
-        numOflikes={2}
-        onClick={handleOpen}
+      <CarouselAtoms
+        items={[
+          <FullRoundRegisterButtonIons onClick={handleOpen} />,
+          <FullRoundLoginButtonIons onClick={handleOpen} />,
+          <FullRoundPurpleButtonIons size="medium" onClick={handleOpen}>
+            hello
+          </FullRoundPurpleButtonIons>,
+          <FullRoundWhiteButtonIons onClick={handleOpen}>
+            hello
+          </FullRoundWhiteButtonIons>,
+          <RoundWhiteButtonIons onClick={handleOpen}>
+            White
+          </RoundWhiteButtonIons>,
+          <RoundLikeButtonIons
+            selected
+            size="extra-large"
+            numOflikes={2}
+            onClick={handleOpen}
+          />,
+          <CircleFixedPinkButtonIons size="large" onClick={handleOpen}>
+            hello
+          </CircleFixedPinkButtonIons>,
+          <FacebookRoundButtonAtoms
+            onClick={() => {
+              console.log('onClick');
+            }}
+          />,
+          <XRoundButton
+            onClick={() => {
+              console.log('onClick');
+            }}
+          />,
+        ]}
+        slide_min_width={400}
+        nextButton={<button>next</button>}
+        prevButton={<button>prev</button>}
+        playOnInit
       />
-      <CircleFixedPinkButtonIons size="large" onClick={handleOpen}>
-        hello
-      </CircleFixedPinkButtonIons>
       <CircleFixedPostButtonIons size="large" onClick={handleOpen} />
 
       <SelectorAtoms
@@ -122,12 +139,6 @@ const HomeTemplate: React.FC<HomeTemplateProps> = () => {
           size="small"
         />
       </div>
-
-      <FacebookRoundButtonAtoms
-        onClick={() => {
-          console.log('onClick');
-        }}
-      />
 
       <PopupAtoms open={open} onClose={handleClose}>
         <TextFieldAtoms
