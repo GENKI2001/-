@@ -7,31 +7,43 @@
 }
 
 .text-atoms-extra-small {
-  font-size: 13px;
-  line-height: 13.5px;
+  --font-size: 13px;
+  --line-height: 1.1;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
 }
 
 .text-atoms-small {
-  font-size: 16px;
-  line-height: 17px;
+  --font-size: 16px;
+  --line-height: 1.1;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
 }
 
 .text-atoms-normal {
-  font-size: 20px;
-  line-height: 22px;
+  --font-size: 20px;
+  --line-height: 1.2;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
 }
 
 .text-atoms-medium {
-  font-size: 24px;
-  line-height: 26px;
+  --font-size: 24px;
+  --line-height: 1.2;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
 }
 
 .text-atoms-large {
-  font-size: 30px;
-  line-height: 32px;
+  --font-size: 30px;
+  --line-height: 1.2;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
 }
 
 .text-atoms-extra-large {
-  font-size: 58px;
-  line-height: 60px;
+  --font-size: 58px;
+  --line-height: 1.2;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
 }

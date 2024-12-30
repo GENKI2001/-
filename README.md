@@ -27,7 +27,7 @@
 
 ### 依存関係
 - 依存: Atoms 層のみ
-- 参照先: Molecules層、Organisms 層 (スキップを許可)
+- 参照先: Molecules層、Organisms・Templates 層 (スキップを許可)
 
 ## Molecules 層の定義と規則
 
@@ -35,11 +35,11 @@
 
 ### 依存関係
 - 依存: Ions 層のみ
-- 参照先: Organisms 層
+- 参照先: Organisms・Templates 層(スキップを許可)
 
 ## Organisms 層の定義と規則
 
-**Organisms 層**は、複数のIons・Molecules層のコンポーネントにより構成されます。
+**Organisms 層**は、複数のIons・Molecules層のコンポーネントにより構成される。
 
 ### 依存関係
 - 依存: Ions層、Molecules 層のみ
