@@ -26,6 +26,7 @@ import { HomeSubTitleTextIons } from '../ions/text/subtitle/HomeSubTitle.Ions';
 import { TagText } from '../ions/text/tag/TagText.Ions';
 import { HomeTitleTextIons } from '../ions/text/title/HomeTitleText.Ions';
 import { PurpleTitleTextIons } from '../ions/text/title/PurpleTitleText.Ions';
+import DefaultTextFieldIons from '../ions/textfield/DefaultTextField.Ions';
 
 interface HomeTemplateProps {
   temp?: string;
@@ -139,6 +140,17 @@ const HomeTemplate: React.FC<HomeTemplateProps> = () => {
           size="small"
         />
       </div>
+
+      <DefaultTextFieldIons
+        label="Name"
+        rows={2}
+        placeholder="Enter your name"
+        onChange={() => {
+          console.log('onChange');
+        }}
+        value="dfasd"
+        error={null}
+      />
 
       <PopupAtoms open={open} onClose={handleClose}>
         <TextFieldAtoms
