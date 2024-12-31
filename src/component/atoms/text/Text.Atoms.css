@@ -1,5 +1,6 @@
 .text-atoms{
   color: #383E86;
+  white-space: pre-wrap;
 }
 
 .text-atoms:hover{

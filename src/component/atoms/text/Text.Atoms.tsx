@@ -17,10 +17,9 @@ export const TextAtoms: React.FC<TextProps> = ({
   rows,
   onClick,
 }) => (
-  // lineheightとrowsが使用されている場合には、
   <span
     onClick={onClick}
-    className={`text-atoms-${size} ${className}`}
+    className={`text-atoms text-atoms-${size} ${className}`}
     style={{
       cursor: onClick ? 'pointer' : undefined,
       height: rows
