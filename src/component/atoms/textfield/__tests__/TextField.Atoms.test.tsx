@@ -108,4 +108,30 @@ describe('TextFieldAtoms', () => {
     const inputElement = screen.getByText('3 / 3');
     expect(inputElement).toHaveClass('textfield-counter max');
   });
+
+  it('rowsが設定されたらtextareaに切り替わる', () => {
+    const { container } = render(
+      <TextFieldAtoms
+        label="Test Label"
+        value=""
+        onChange={() => {}}
+        error={null}
+        rows={3}
+      />,
+    );
+    expect(container.querySelector('textarea')).toBeInTheDocument();
+    expect(container.querySelector('textarea')).toHaveAttribute('rows', '3');
+  });
+
+  it('rowsが設定されなければinputのまま', () => {
+    const { container } = render(
+      <TextFieldAtoms
+        label="Test Label"
+        value=""
+        onChange={() => {}}
+        error={null}
+      />,
+    );
+    expect(container.querySelector('input')).toBeInTheDocument();
+  });
 });

@@ -4,12 +4,15 @@ import './TextField.Atoms.css';
 interface TextFieldProps {
   label: string;
   value: string;
-  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  onChange: (
+    e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>,
+  ) => void;
   placeholder?: string;
   error: string | null;
   max?: number;
   type?: string;
   input_class_name?: string;
+  rows?: number;
 }
 
 const TextFieldAtoms: React.FC<TextFieldProps> = ({
@@ -21,16 +24,20 @@ const TextFieldAtoms: React.FC<TextFieldProps> = ({
   max,
   type = 'text',
   input_class_name,
+  rows,
 }) => {
+  const InputComponent = rows ? 'textarea' : 'input';
+
   return (
     <div className="textfield-container">
       <label className="textfield-label">{label}</label>
-      <input
+      <InputComponent
         type={type}
         value={value}
         onChange={onChange}
         placeholder={placeholder}
         className={`textfield-input ${error ? 'textfield-input-error' : ''} ${input_class_name ?? ''}`}
+        rows={rows}
       />
       <section className="textfield-error-max-container">
         {error && <div className="textfield-error">{error}</div>}
