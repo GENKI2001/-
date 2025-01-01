@@ -1,5 +1,12 @@
 .relative {
   position: relative;
+  width: 100%;
+}
+
+.selector-label {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #333;
 }
 
 .select-wrapper {
@@ -36,6 +43,7 @@
   text-overflow: ellipsis;
   color: gray;
   cursor: pointer;
+  font-size: 14px;
 }
 
 .select-text.selected {
