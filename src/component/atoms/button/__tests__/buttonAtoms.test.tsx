@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import ButtonAtoms from '../Button.Atoms';
-import { ButtonSizeTypeAtoms } from '../Button.type';
+import { ButtonAtomsSizeType } from '../Button.type';
 
 describe('ButtonAtoms component', () => {
   it('(PC版) クリックした時にonClickが1回作動する。', () => {
@@ -108,7 +108,7 @@ describe('ButtonAtoms component', () => {
   });
 
   it('sizeが正しく適用される', () => {
-    const size: ButtonSizeTypeAtoms = 'large';
+    const size: ButtonAtomsSizeType = 'large';
     render(
       <ButtonAtoms onClick={() => {}} size={size}>
         Large Button

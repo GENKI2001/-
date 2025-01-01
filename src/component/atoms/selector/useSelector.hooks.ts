@@ -1,6 +1,6 @@
 import { RefObject, useEffect, useRef, useState } from 'react';
 import useOpen from '../../../hooks/useOpen';
-import { SelectorOption } from './Selector.Atoms';
+import { SelectorOption } from './Selector.type';
 
 type UseSelectorProps = {
   options: SelectorOption[];

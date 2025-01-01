@@ -1,8 +1,9 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import RadioButtonAtoms from '../RadioButton.Atoms';
+import { RadioButtonAtomsProps } from '../RadioButton.type';
 
 describe('RadioButtonAtoms', () => {
-  const defaultProps = {
+  const defaultProps: RadioButtonAtomsProps = {
     checked: false,
     onClick: jest.fn(),
   };

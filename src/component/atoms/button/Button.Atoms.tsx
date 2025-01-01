@@ -1,19 +1,8 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import './Button.Atoms.css';
-import { ButtonSizeTypeAtoms } from './Button.type';
+import { ButtonAtomsProps } from './Button.type';
 
-interface ButtonProps {
-  children: ReactNode;
-  onClick?: () => void;
-  className?: string;
-  disabled?: boolean;
-  isMobile?: boolean;
-  size?: ButtonSizeTypeAtoms;
-  width?: string | number;
-  padding?: string | number;
-}
-
-const ButtonAtoms: React.FC<ButtonProps> = ({
+const ButtonAtoms: React.FC<ButtonAtomsProps> = ({
   children,
   onClick,
   className,

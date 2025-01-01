@@ -5,16 +5,12 @@ import {
   InstagramLoginButton,
   XLoginButton,
 } from 'react-social-login-buttons';
-import { SNSButtonSizeTypeAtoms } from '../SNSButton.type';
+import { SNSButtonAtomsProps } from '../SNSButton.type';
 import './SNSRoundButton.Atoms.css';
 
-interface ButtonProps {
-  onClick: () => void;
-  text?: string;
-  size?: SNSButtonSizeTypeAtoms;
-}
-
-export const FacebookRoundButtonAtoms: React.FC<ButtonProps> = (props) => {
+export const FacebookRoundButtonAtoms: React.FC<SNSButtonAtomsProps> = (
+  props,
+) => {
   return (
     <FacebookLoginButton
       align="center"
@@ -25,7 +21,9 @@ export const FacebookRoundButtonAtoms: React.FC<ButtonProps> = (props) => {
   );
 };
 
-export const GoogleRoundButtonAtoms: React.FC<ButtonProps> = (props) => {
+export const GoogleRoundButtonAtoms: React.FC<SNSButtonAtomsProps> = (
+  props,
+) => {
   return (
     <GoogleLoginButton
       align="center"
@@ -36,7 +34,7 @@ export const GoogleRoundButtonAtoms: React.FC<ButtonProps> = (props) => {
   );
 };
 
-export const XRoundButtonAtoms: React.FC<ButtonProps> = (props) => {
+export const XRoundButtonAtoms: React.FC<SNSButtonAtomsProps> = (props) => {
   return (
     <XLoginButton
       align="center"
@@ -47,7 +45,9 @@ export const XRoundButtonAtoms: React.FC<ButtonProps> = (props) => {
   );
 };
 
-export const InstagramRoundButtonAtoms: React.FC<ButtonProps> = (props) => {
+export const InstagramRoundButtonAtoms: React.FC<SNSButtonAtomsProps> = (
+  props,
+) => {
   return (
     <InstagramLoginButton
       align="center"

@@ -1,16 +1,8 @@
 import React from 'react';
 import './Text.Atoms.css';
-import { TextSizeTypeAtoms } from './Text.type';
+import { TextAtomsProps } from './Text.type';
 
-type TextProps = {
-  text: string;
-  className?: string;
-  size?: TextSizeTypeAtoms;
-  rows?: number;
-  onClick?: () => void;
-};
-
-export const TextAtoms: React.FC<TextProps> = ({
+export const TextAtoms: React.FC<TextAtomsProps> = ({
   text,
   className,
   size = 'medium',

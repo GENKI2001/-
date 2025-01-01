@@ -1,17 +1,10 @@
-import React, { ReactNode } from 'react';
-import { useVisibilityController } from '../../../../../RE-IDEA/front/src/hooks/useVisibilityController';
+import React from 'react';
+import { useVisibilityController } from '../../../hooks/useVisibilityController';
 import './Popup.Atoms.css';
-import { PopupSizeTypeAtoms } from './Popup.type';
+import { PopupAtomsProps } from './Popup.type';
 import { usePopupClose } from './usePopupClose.hooks';
 
-interface PopupProps {
-  open: boolean;
-  onClose: () => void;
-  children: ReactNode;
-  size?: PopupSizeTypeAtoms;
-}
-
-const PopupAtoms: React.FC<PopupProps> = ({
+const PopupAtoms: React.FC<PopupAtomsProps> = ({
   open,
   onClose,
   children,

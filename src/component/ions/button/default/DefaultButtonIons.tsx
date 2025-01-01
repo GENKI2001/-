@@ -1,6 +1,6 @@
 import React from 'react';
 import ButtonAtoms from '../../../atoms/button/Button.Atoms';
-import { ButtonSizeTypeAtoms } from '../../../atoms/button/Button.type';
+import { ButtonAtomsSizeType } from '../../../atoms/button/Button.type';
 import './Button.Atoms.css';
 
 interface ButtonProps {
@@ -10,7 +10,7 @@ interface ButtonProps {
   isMobile?: boolean;
   width?: string | number;
   padding?: string | number;
-  size?: ButtonSizeTypeAtoms;
+  size?: ButtonAtomsSizeType;
 }
 
 const DefaultButtonIons: React.FC<ButtonProps> = ({

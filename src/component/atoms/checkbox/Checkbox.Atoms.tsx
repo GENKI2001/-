@@ -1,14 +1,8 @@
 import React from 'react';
 import './Checkbox.Atoms.css';
+import { CheckboxAtomsProps } from './Checkbox.type';
 
-interface CheckboxProps {
-  label: string;
-  checked: boolean;
-  onChange: () => void;
-  disabled?: boolean;
-}
-
-const CheckboxAtoms: React.FC<CheckboxProps> = ({
+const CheckboxAtoms: React.FC<CheckboxAtomsProps> = ({
   label,
   checked,
   onChange,

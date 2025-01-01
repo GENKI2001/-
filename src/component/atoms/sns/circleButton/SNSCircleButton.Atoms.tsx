@@ -8,16 +8,12 @@ import {
   LinkedinIcon,
   XIcon,
 } from 'react-share';
-import { SNSButtonSizeTypeAtoms } from '../SNSButton.type';
+import { SNSButtonAtomsProps } from '../SNSButton.type';
 import './SNSCircleButton.Atoms.css';
 
-interface ButtonProps {
-  onClick: () => void;
-  text?: string;
-  size?: SNSButtonSizeTypeAtoms;
-}
-
-export const FacebookCircleButtonAtoms: React.FC<ButtonProps> = (props) => {
+export const FacebookCircleButtonAtoms: React.FC<SNSButtonAtomsProps> = (
+  props,
+) => {
   return (
     <FacebookIcon
       className={`sns-circle-button-atoms-${props.size ?? 'small'}`}
@@ -28,7 +24,7 @@ export const FacebookCircleButtonAtoms: React.FC<ButtonProps> = (props) => {
   );
 };
 
-export const XCircleButtonAtoms: React.FC<ButtonProps> = (props) => {
+export const XCircleButtonAtoms: React.FC<SNSButtonAtomsProps> = (props) => {
   return (
     <XIcon
       className={`sns-circle-button-atoms-${props.size ?? 'small'}`}
@@ -39,7 +35,7 @@ export const XCircleButtonAtoms: React.FC<ButtonProps> = (props) => {
   );
 };
 
-export const LineCircleButtonAtoms: React.FC<ButtonProps> = (props) => {
+export const LineCircleButtonAtoms: React.FC<SNSButtonAtomsProps> = (props) => {
   return (
     <LineIcon
       className={`sns-circle-button-atoms-${props.size ?? 'small'}`}
@@ -50,7 +46,9 @@ export const LineCircleButtonAtoms: React.FC<ButtonProps> = (props) => {
   );
 };
 
-export const HatenaCircleButtonAtoms: React.FC<ButtonProps> = (props) => {
+export const HatenaCircleButtonAtoms: React.FC<SNSButtonAtomsProps> = (
+  props,
+) => {
   return (
     <HatenaIcon
       className={`sns-circle-button-atoms-${props.size ?? 'small'}`}
@@ -61,7 +59,9 @@ export const HatenaCircleButtonAtoms: React.FC<ButtonProps> = (props) => {
   );
 };
 
-export const InstaCircleButtonAtoms: React.FC<ButtonProps> = (props) => {
+export const InstaCircleButtonAtoms: React.FC<SNSButtonAtomsProps> = (
+  props,
+) => {
   return (
     <InstapaperIcon
       className={`sns-circle-button-atoms-${props.size ?? 'small'}`}
@@ -72,7 +72,9 @@ export const InstaCircleButtonAtoms: React.FC<ButtonProps> = (props) => {
   );
 };
 
-export const LinkedinCircleButtonAtoms: React.FC<ButtonProps> = (props) => {
+export const LinkedinCircleButtonAtoms: React.FC<SNSButtonAtomsProps> = (
+  props,
+) => {
   return (
     <LinkedinIcon
       className={`sns-circle-button-atoms-${props.size ?? 'small'}`}
@@ -83,7 +85,9 @@ export const LinkedinCircleButtonAtoms: React.FC<ButtonProps> = (props) => {
   );
 };
 
-export const EmailCircleButtonAtoms: React.FC<ButtonProps> = (props) => {
+export const EmailCircleButtonAtoms: React.FC<SNSButtonAtomsProps> = (
+  props,
+) => {
   return (
     <EmailIcon
       className={`sns-circle-button-atoms-${props.size ?? 'small'}`}

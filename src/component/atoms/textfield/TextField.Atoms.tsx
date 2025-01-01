@@ -1,21 +1,8 @@
-import React, { ChangeEvent } from 'react';
+import React from 'react';
 import './TextField.Atoms.css';
+import { TextFieldAtomsProps } from './TextField.type';
 
-interface TextFieldProps {
-  label: string;
-  value: string;
-  onChange: (
-    e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>,
-  ) => void;
-  placeholder?: string;
-  error: string | null;
-  max?: number;
-  type?: string;
-  input_class_name?: string;
-  rows?: number;
-}
-
-const TextFieldAtoms: React.FC<TextFieldProps> = ({
+const TextFieldAtoms: React.FC<TextFieldAtomsProps> = ({
   label,
   value,
   onChange,

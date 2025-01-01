@@ -1,17 +1,9 @@
 import { useVisibilityController } from '../../../hooks/useVisibilityController';
 import './Popover.Atoms.css';
-import { PopoverPlacement, PopoverTrigger } from './Popover.type';
+import { PopoverAtomsProps } from './Popover.type';
 import { usePopover } from './usePopover.hooks';
 
-export interface PopoverProps {
-  children: React.ReactNode;
-  content: React.ReactNode;
-  trigger?: PopoverTrigger;
-  placement?: PopoverPlacement;
-  className?: string;
-}
-
-const PopoverAtoms: React.FC<PopoverProps> = ({
+const PopoverAtoms: React.FC<PopoverAtomsProps> = ({
   children,
   content,
   trigger = 'click',
