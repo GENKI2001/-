@@ -1,24 +1,20 @@
 import React from 'react';
 import { TextAtoms } from '../../../atoms/text/Text.Atoms';
-import { TextSizeTypeAtoms } from '../../../atoms/text/Text.type';
+import {
+  TextAtomsProps,
+  TextSizeTypeAtoms,
+} from '../../../atoms/text/Text.type';
 import './../Text.Ions.css';
 import './TitleText.Ions.css';
 
-type TextProps = {
-  text: string;
-  onClick?: () => void;
-  size?: Extract<TextSizeTypeAtoms, 'large' | 'extra-large'>;
-};
+interface TextProps extends TextAtomsProps {
+  size?: Extract<TextSizeTypeAtoms, 'medium' | 'large' | 'extra-large'>;
+}
 
-export const HomeTitleTextIons: React.FC<TextProps> = ({
-  text,
-  onClick,
-  size = 'extra-large',
-}) => (
+export const HomeTitleTextIons: React.FC<TextProps> = (props) => (
   <TextAtoms
-    onClick={onClick}
-    size={size}
+    {...props}
+    size={props.size || 'extra-large'}
     className={'home-title-text-ions text-colored-purple'}
-    text={text}
   />
 );

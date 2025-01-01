@@ -1,24 +1,14 @@
 import React from 'react';
 import { TextAtoms } from '../../../atoms/text/Text.Atoms';
-import { TextSizeTypeAtoms } from '../../../atoms/text/Text.type';
+import { TextAtomsProps } from '../../../atoms/text/Text.type';
 import './../Text.Ions.css';
 import './TagText.Ions.css';
 
-type TextProps = {
-  text: string;
-  onClick?: () => void;
-  size?: TextSizeTypeAtoms;
-};
-
-export const TagText: React.FC<TextProps> = ({
-  text,
-  onClick,
-  size = 'small',
-}) => (
+export const TagTextIons: React.FC<TextAtomsProps> = (props) => (
   <TextAtoms
-    onClick={onClick}
-    size={size}
-    className={`tag-text-ions ${onClick ? 'clickable' : ''}`}
-    text={'# ' + text}
+    {...props}
+    size={props.size || 'small'}
+    className={`tag-text-ions ${props.onClick ? 'clickable' : ''}`}
+    text={'# ' + props.text}
   />
 );

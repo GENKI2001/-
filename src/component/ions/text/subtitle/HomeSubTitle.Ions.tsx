@@ -1,23 +1,19 @@
 import React from 'react';
 import { TextAtoms } from '../../../atoms/text/Text.Atoms';
-import { TextSizeTypeAtoms } from '../../../atoms/text/Text.type';
+import {
+  TextAtomsProps,
+  TextSizeTypeAtoms,
+} from '../../../atoms/text/Text.type';
 import './SubTitleText.Ions.css';
 
-type TextProps = {
-  text: string;
-  onClick?: () => void;
+interface TextProps extends TextAtomsProps {
   size?: Extract<TextSizeTypeAtoms, 'normal' | 'medium' | 'large'>;
-};
+}
 
-export const HomeSubTitleTextIons: React.FC<TextProps> = ({
-  text,
-  onClick,
-  size = 'large',
-}) => (
+export const HomeSubTitleTextIons: React.FC<TextProps> = (props) => (
   <TextAtoms
-    onClick={onClick}
-    size={size}
+    {...props}
+    size={props.size || 'medium'}
     className={'home-subtitle-text-ions'}
-    text={text}
   />
 );
