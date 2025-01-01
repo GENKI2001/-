@@ -1,5 +1,5 @@
 import { act, fireEvent, renderHook } from '@testing-library/react';
-import { SelectorOption } from '../Selector.Atoms';
+import { SelectorOption } from '../Selector.type';
 import { useSelector } from '../useSelector.hooks';
 
 describe('useSelector', () => {

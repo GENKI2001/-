@@ -1,16 +1,8 @@
 import React from 'react';
 import './RadioButton.Atoms.css';
-import { RadioButtonSizeTypeAtoms } from './RadioButton.type';
+import { RadioButtonAtomsProps } from './RadioButton.type';
 
-type RadioButtonProps = {
-  checked: boolean;
-  onClick: () => void;
-  isMobile?: boolean;
-  size?: RadioButtonSizeTypeAtoms;
-  children?: React.ReactNode;
-};
-
-const RadioButtonAtoms: React.FC<RadioButtonProps> = ({
+const RadioButtonAtoms: React.FC<RadioButtonAtomsProps> = ({
   checked,
   onClick,
   isMobile,

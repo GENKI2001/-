@@ -1,6 +1,6 @@
 import React from 'react';
 import ButtonAtoms from '../../../../atoms/button/Button.Atoms';
-import { ButtonSizeTypeAtoms } from '../../../../atoms/button/Button.type';
+import { ButtonAtomsSizeType } from '../../../../atoms/button/Button.type';
 import '../ButtonRound.css';
 
 interface ButtonProps {
@@ -8,7 +8,7 @@ interface ButtonProps {
   onClick?: () => void;
   disabled?: boolean;
   isMobile?: boolean;
-  size?: ButtonSizeTypeAtoms;
+  size?: ButtonAtomsSizeType;
   width?: string | number;
   padding?: string | number;
 }

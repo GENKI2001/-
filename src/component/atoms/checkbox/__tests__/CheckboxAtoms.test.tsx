@@ -1,8 +1,9 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import Checkbox from '../Checkbox.Atoms';
+import { CheckboxAtomsProps } from '../Checkbox.type';
 
 describe('Checkbox', () => {
-  const defaultProps = {
+  const defaultProps: CheckboxAtomsProps = {
     label: 'テスト用チェックボックス',
     checked: false,
     onChange: jest.fn(),

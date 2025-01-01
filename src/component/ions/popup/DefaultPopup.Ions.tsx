@@ -1,12 +1,12 @@
 import React, { ReactNode } from 'react';
 import PopupAtoms from '../../atoms/popup/Popup.Atoms';
-import { PopupSizeTypeAtoms } from '../../atoms/popup/Popup.type';
+import { PopupAtomsSizeType } from '../../atoms/popup/Popup.type';
 
 interface PopupProps {
   open: boolean;
   onClose: () => void;
   children: ReactNode;
-  size?: PopupSizeTypeAtoms;
+  size?: PopupAtomsSizeType;
 }
 
 const DefaultPopupIons: React.FC<PopupProps> = ({

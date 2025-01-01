@@ -1,14 +1,15 @@
 import { render, screen } from '@testing-library/react';
+import { SelectorAtomsProps, SelectorOption } from '../Selector.type';
 import SelectorAtoms from './../Selector.Atoms';
 
 describe('SelectorAtoms', () => {
-  const mockOptions = [
+  const mockOptions: SelectorOption[] = [
     { value: '1', label: 'Option 1' },
     { value: '2', label: 'Option 2' },
     { value: '3', label: 'Option 3', disabled: true },
   ];
 
-  const defaultProps = {
+  const defaultProps: SelectorAtomsProps = {
     options: mockOptions,
     value: '1',
     onChange: jest.fn(),

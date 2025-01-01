@@ -1,13 +1,8 @@
 import React from 'react';
 import './Img.Atoms.css';
+import { ImgAtomsProps } from './Img.type';
 
-interface ImgProps {
-  img_src: string;
-  alt?: string;
-  className?: string;
-}
-
-const ImgAtoms: React.FC<ImgProps> = ({ img_src, alt, className }) => {
+const ImgAtoms: React.FC<ImgAtomsProps> = ({ img_src, alt, className }) => {
   return <img src={img_src} alt={alt} className={`img-atoms ${className}`} />;
 };
 

@@ -1,7 +1,7 @@
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import React from 'react';
 import ButtonAtoms from '../../../../atoms/button/Button.Atoms';
-import { ButtonSizeTypeAtoms } from '../../../../atoms/button/Button.type';
+import { ButtonAtomsSizeType } from '../../../../atoms/button/Button.type';
 import '../ButtonRound.css';
 import './RoundLikeButton.Ions.css';
 
@@ -10,7 +10,7 @@ interface ButtonProps {
   disabled?: boolean;
   isMobile?: boolean;
   numOflikes: number;
-  size?: ButtonSizeTypeAtoms;
+  size?: ButtonAtomsSizeType;
   selected?: boolean;
 }
 

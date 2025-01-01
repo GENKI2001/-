@@ -1,22 +1,8 @@
 import './Selector.Atoms.css';
+import { SelectorAtomsProps } from './Selector.type';
 import { useSelector } from './useSelector.hooks';
 
-export type SelectorOption = {
-  value: string;
-  label: string;
-  disabled?: boolean;
-};
-
-type CustomSelectProps = {
-  options: SelectorOption[];
-  value: string;
-  onChange: (option: SelectorOption) => void;
-  label?: string;
-  placeholder?: string;
-  disabled?: boolean;
-};
-
-const SelectorAtoms: React.FC<CustomSelectProps> = ({
+const SelectorAtoms: React.FC<SelectorAtomsProps> = ({
   options = [],
   value = '',
   onChange = () => console.log('onChange'),
