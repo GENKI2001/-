@@ -1,6 +1,8 @@
 import PopoverAtoms from '../../atoms/popover/Popover.Atoms';
-import { PopoverPlacement } from '../../atoms/popover/type/PopoverPlacement';
-import { PopoverTrigger } from '../../atoms/popover/type/PopoverTrigger';
+import {
+  PopoverPlacement,
+  PopoverTrigger,
+} from '../../atoms/popover/Popover.type';
 
 export interface PopoverProps {
   children: React.ReactNode;

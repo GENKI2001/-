@@ -1,8 +1,7 @@
-import { usePopover } from '../../../hooks/usePopover';
-import { useVisibleAnimation } from '../../../hooks/usePopupAnimation';
+import { useVisibilityController } from '../../../hooks/useVisibilityController';
 import './Popover.Atoms.css';
-import { PopoverPlacement } from './type/PopoverPlacement';
-import { PopoverTrigger } from './type/PopoverTrigger';
+import { PopoverPlacement, PopoverTrigger } from './Popover.type';
+import { usePopover } from './usePopover.hooks';
 
 export interface PopoverProps {
   children: React.ReactNode;
@@ -27,7 +26,7 @@ const PopoverAtoms: React.FC<PopoverProps> = ({
   } = usePopover({ trigger });
 
   // アニメーションを制御するhooks
-  const { isVisible, isClosing } = useVisibleAnimation(open, 200);
+  const { isVisible, isClosing } = useVisibilityController(open, 200);
 
   return (
     <div className="popover-wrapper">

@@ -1,6 +1,6 @@
 import React from 'react';
 import './RadioButton.Atoms.css';
-import { RadioButtonSizeTypeAtoms } from './type/RadioButtonSizeType.Atoms';
+import { RadioButtonSizeTypeAtoms } from './RadioButton.type';
 
 type RadioButtonProps = {
   checked: boolean;

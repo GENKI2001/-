@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import PopupAtoms from '../../atoms/popup/Popup.Atoms';
-import { PopupSizeTypeAtoms } from '../../atoms/popup/type/PopupSizeType.Atoms';
+import { PopupSizeTypeAtoms } from '../../atoms/popup/Popup.type';
 
 interface PopupProps {
   open: boolean;

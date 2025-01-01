@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { PopoverTrigger } from '../component/atoms/popover/type/PopoverTrigger';
+import { PopoverTrigger } from './Popover.type';
 
 interface UsePopoverProps {
   trigger: PopoverTrigger;

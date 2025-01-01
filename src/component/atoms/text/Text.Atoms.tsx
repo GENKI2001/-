@@ -1,6 +1,6 @@
 import React from 'react';
 import './Text.Atoms.css';
-import { TextSizeTypeAtoms } from './type/TextSizeType.Atoms';
+import { TextSizeTypeAtoms } from './Text.type';
 
 type TextProps = {
   text: string;

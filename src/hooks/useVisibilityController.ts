@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export const useVisibleAnimation = (
+export const useVisibilityController = (
   open: boolean,
   animationDuration: number,
 ) => {

@@ -1,0 +1,18 @@
+
+.sns-circle-button-atoms-small {
+  height: 35px !important;
+  width: 35px !important;
+  cursor: pointer;
+}
+
+.sns-circle-button-atoms-medium {
+  height: 45px !important;
+  width: 45px !important;
+  cursor: pointer;
+}
+
+.sns-circle-button-atoms-large {
+  height: 50px !important;
+  width: 50px !important;
+  cursor: pointer;
+}

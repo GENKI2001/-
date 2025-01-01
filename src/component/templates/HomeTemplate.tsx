@@ -5,7 +5,7 @@ import PopupAtoms from '../atoms/popup/Popup.Atoms';
 import SelectorAtoms from '../atoms/selector/Selector.Atoms';
 import {
   FacebookRoundButtonAtoms,
-  XRoundButton,
+  XRoundButtonAtoms,
 } from '../atoms/sns/roundButton/SNSRoundButtonAtoms';
 import TextFieldAtoms from '../atoms/textfield/TextField.Atoms';
 import CircleFixedPinkButtonIons from '../ions/button/circle/pink/CircleFixedPinkButton.Ions';
@@ -63,7 +63,7 @@ const HomeTemplate: React.FC<HomeTemplateProps> = () => {
               console.log('onClick');
             }}
           />,
-          <XRoundButton
+          <XRoundButtonAtoms
             onClick={() => {
               console.log('onClick');
             }}

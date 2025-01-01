@@ -1,5 +1,6 @@
 import { act, fireEvent, renderHook } from '@testing-library/react';
-import { SelectorOption, useSelector } from '../useSelector';
+import { SelectorOption } from '../Selector.Atoms';
+import { useSelector } from '../useSelector.hooks';
 
 describe('useSelector', () => {
   // テストで使用する共通のオプション
@@ -72,10 +73,13 @@ describe('useSelector', () => {
     const { result } = renderHook(() => useSelector(defaultProps));
 
     act(() => {
-      result.current.handleOptionClick('2');
+      result.current.handleOptionClick({ value: '2', label: 'Option 2' });
     });
 
-    expect(defaultProps.onOptionValueChange).toHaveBeenCalledWith('2');
+    expect(defaultProps.onOptionValueChange).toHaveBeenCalledWith({
+      value: '2',
+      label: 'Option 2',
+    });
     expect(result.current.open).toBe(false);
   });
 

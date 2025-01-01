@@ -2,6 +2,7 @@
 .radio-button-wrapper {
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
 .radio-input {
@@ -59,6 +60,7 @@
 }
 
 .radio-button-label {
+  flex: 1;
   cursor: pointer;
   padding-left: 10px;
 }
