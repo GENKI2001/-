@@ -4,8 +4,8 @@ import Autoplay from 'embla-carousel-autoplay';
 import useEmblaCarousel from 'embla-carousel-react';
 import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures';
 import { useCallback, useEffect } from 'react';
-import { useDotButton } from '../hooks/useDotButton';
-import { usePrevNextButtons } from '../hooks/usePrevNextButtons';
+import { useDotButton } from './useDotButton.hooks';
+import { usePrevNextButtons } from './usePrevNextButtons.hooks';
 
 interface UseCarouselOptions {
   loop?: boolean;

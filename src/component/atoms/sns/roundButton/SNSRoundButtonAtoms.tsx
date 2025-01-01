@@ -5,7 +5,7 @@ import {
   InstagramLoginButton,
   XLoginButton,
 } from 'react-social-login-buttons';
-import { SNSButtonSizeTypeAtoms } from '../type/SNSButtonSizeType.Atoms';
+import { SNSButtonSizeTypeAtoms } from '../SNSButton.type';
 import './SNSRoundButton.Atoms.css';
 
 interface ButtonProps {
@@ -25,7 +25,7 @@ export const FacebookRoundButtonAtoms: React.FC<ButtonProps> = (props) => {
   );
 };
 
-export const GoogleRoundButton: React.FC<ButtonProps> = (props) => {
+export const GoogleRoundButtonAtoms: React.FC<ButtonProps> = (props) => {
   return (
     <GoogleLoginButton
       align="center"
@@ -36,7 +36,7 @@ export const GoogleRoundButton: React.FC<ButtonProps> = (props) => {
   );
 };
 
-export const XRoundButton: React.FC<ButtonProps> = (props) => {
+export const XRoundButtonAtoms: React.FC<ButtonProps> = (props) => {
   return (
     <XLoginButton
       align="center"
@@ -47,7 +47,7 @@ export const XRoundButton: React.FC<ButtonProps> = (props) => {
   );
 };
 
-export const InstagramRoundButton: React.FC<ButtonProps> = (props) => {
+export const InstagramRoundButtonAtoms: React.FC<ButtonProps> = (props) => {
   return (
     <InstagramLoginButton
       align="center"

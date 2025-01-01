@@ -1,6 +1,6 @@
 import { act, renderHook } from '@testing-library/react';
-import { PopoverTrigger } from '../../component/atoms/popover/type/PopoverTrigger';
-import { usePopover } from '../usePopover';
+import { PopoverTrigger } from '../Popover.type';
+import { usePopover } from '../usePopover.hooks';
 
 // タイマーをモック化
 jest.useFakeTimers();

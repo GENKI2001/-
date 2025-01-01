@@ -1,5 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import ButtonAtoms from '../Button.Atoms';
+import { ButtonSizeTypeAtoms } from '../Button.type';
 
 describe('ButtonAtoms component', () => {
   it('(PC版) クリックした時にonClickが1回作動する。', () => {
@@ -80,5 +81,41 @@ describe('ButtonAtoms component', () => {
 
     expect(buttonElement).toBeInTheDocument();
     expect(buttonElement).toHaveTextContent(buttonText);
+  });
+
+  it('widthが正しく適用される', () => {
+    const width = '100px';
+    render(
+      <ButtonAtoms onClick={() => {}} width={width}>
+        Width Button
+      </ButtonAtoms>,
+    );
+
+    const buttonElement = screen.getByRole('button');
+    expect(buttonElement).toHaveStyle({ width });
+  });
+
+  it('paddingが正しく適用される', () => {
+    const padding = '10px';
+    render(
+      <ButtonAtoms onClick={() => {}} padding={padding}>
+        Padding Button
+      </ButtonAtoms>,
+    );
+
+    const buttonElement = screen.getByRole('button');
+    expect(buttonElement).toHaveStyle({ padding });
+  });
+
+  it('sizeが正しく適用される', () => {
+    const size: ButtonSizeTypeAtoms = 'large';
+    render(
+      <ButtonAtoms onClick={() => {}} size={size}>
+        Large Button
+      </ButtonAtoms>,
+    );
+
+    const buttonElement = screen.getByRole('button');
+    expect(buttonElement).toHaveClass(size);
   });
 });

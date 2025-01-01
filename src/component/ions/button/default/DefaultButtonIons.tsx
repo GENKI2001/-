@@ -1,6 +1,6 @@
 import React from 'react';
 import ButtonAtoms from '../../../atoms/button/Button.Atoms';
-import { ButtonSizeTypeAtoms } from '../../../atoms/button/type/ButtonSizeType.Atoms';
+import { ButtonSizeTypeAtoms } from '../../../atoms/button/Button.type';
 import './Button.Atoms.css';
 
 interface ButtonProps {

@@ -1,9 +1,9 @@
 import React, { ReactNode } from 'react';
 import './Button.Atoms.css';
-import { ButtonSizeTypeAtoms } from './type/ButtonSizeType.Atoms';
+import { ButtonSizeTypeAtoms } from './Button.type';
 
 interface ButtonProps {
-  children: ReactNode; // childrenを受け取る
+  children: ReactNode;
   onClick?: () => void;
   className?: string;
   disabled?: boolean;
@@ -28,7 +28,7 @@ const ButtonAtoms: React.FC<ButtonProps> = ({
       onTouchStart={isMobile ? (disabled ? undefined : onClick) : undefined}
       onClick={isMobile ? undefined : disabled ? undefined : onClick}
       disabled={disabled}
-      className={`button-atoms button-atoms-${size} ${className} `}
+      className={`button-atoms ${size} ${className} `}
       style={{ width, padding }}
     >
       {children}

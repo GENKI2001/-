@@ -1,7 +1,7 @@
 import React, { Dispatch, ReactElement, SetStateAction } from 'react';
-import { useCarousel } from '../../../hooks/useCarousel';
 import { BannerCarouselDotButton } from './buttons/Carousel.DotButton.Atoms';
 import './style/EmblaCarousel.css';
+import { useCarousel } from './useCarousel.hooks';
 
 interface CarouselProps {
   isBanner?: boolean;

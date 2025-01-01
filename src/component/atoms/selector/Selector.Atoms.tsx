@@ -1,16 +1,17 @@
-import { useSelector } from '../../../hooks/useSelector';
 import './Selector.Atoms.css';
+import { useSelector } from './useSelector.hooks';
 
-type Option = {
+export type SelectorOption = {
   value: string;
   label: string;
   disabled?: boolean;
 };
 
 type CustomSelectProps = {
-  options: Option[];
+  options: SelectorOption[];
   value: string;
-  onChange: (value: string) => void;
+  onChange: (option: SelectorOption) => void;
+  label?: string;
   placeholder?: string;
   disabled?: boolean;
 };
@@ -19,6 +20,7 @@ const SelectorAtoms: React.FC<CustomSelectProps> = ({
   options = [],
   value = '',
   onChange = () => console.log('onChange'),
+  label,
   placeholder = '選択してください',
   disabled = false,
 }) => {
@@ -40,6 +42,7 @@ const SelectorAtoms: React.FC<CustomSelectProps> = ({
 
   return (
     <div ref={wrapperRef} className="relative">
+      <label className="selector-label">{label}</label>
       <div
         onClick={handleSelectClick}
         className={`select-wrapper ${open ? 'is-open' : ''} ${
@@ -64,9 +67,7 @@ const SelectorAtoms: React.FC<CustomSelectProps> = ({
                 }`}
                 onMouseEnter={() => setHighlightedIndex(index)}
                 onMouseLeave={() => setHighlightedIndex(null)}
-                onClick={() =>
-                  !option.disabled && handleOptionClick(option.value)
-                }
+                onClick={() => !option.disabled && handleOptionClick(option)}
               >
                 <span className="block truncate">{option.label}</span>
               </li>

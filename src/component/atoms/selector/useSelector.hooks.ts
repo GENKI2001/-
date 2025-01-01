@@ -1,16 +1,11 @@
 import { RefObject, useEffect, useRef, useState } from 'react';
-import useOpen from './useOpen';
-
-export type SelectorOption = {
-  value: string;
-  label: string;
-  disabled?: boolean;
-};
+import useOpen from '../../../hooks/useOpen';
+import { SelectorOption } from './Selector.Atoms';
 
 type UseSelectorProps = {
   options: SelectorOption[];
   value: string;
-  onOptionValueChange: (value: string) => void;
+  onOptionValueChange: (value: SelectorOption) => void;
   disabled?: boolean;
 };
 
@@ -23,7 +18,7 @@ interface UseSelectorReturn {
   setHighlightedIndex: (index: number | null) => void;
   // 選択されているオプション
   selectedOption: SelectorOption | null;
-  handleOptionClick: (optionValue: string) => void;
+  handleOptionClick: (optionValue: SelectorOption) => void;
   wrapperRef: RefObject<HTMLDivElement>;
 }
 
@@ -42,7 +37,7 @@ export const useSelector = ({
   const selectedOption = options.find((opt) => opt.value === value) ?? null;
 
   // オプションをクリックしたときの処理
-  const handleOptionClick = (optionValue: string) => {
+  const handleOptionClick = (optionValue: SelectorOption) => {
     onOptionValueChange(optionValue);
     handleClose();
   };

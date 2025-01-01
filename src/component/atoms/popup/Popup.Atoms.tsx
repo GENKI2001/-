@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react';
-import { useVisibleAnimation } from '../../../hooks/usePopupAnimation';
-import { usePopupClose } from '../../../hooks/usePopupClose';
+import { useVisibilityController } from '../../../../../RE-IDEA/front/src/hooks/useVisibilityController';
 import './Popup.Atoms.css';
-import { PopupSizeTypeAtoms } from './type/PopupSizeType.Atoms';
+import { PopupSizeTypeAtoms } from './Popup.type';
+import { usePopupClose } from './usePopupClose.hooks';
 
 interface PopupProps {
   open: boolean;
@@ -21,8 +21,8 @@ const PopupAtoms: React.FC<PopupProps> = ({
   const { handleMouseDown, handleReset, handleMouseUp } =
     usePopupClose(onClose);
 
-  // ポップアップの表示・非表示を制御するhooks
-  const { isVisible, isClosing } = useVisibleAnimation(open, 200);
+  // アニメーションを制御するhooks
+  const { isVisible, isClosing } = useVisibilityController(open, 200);
 
   if (!isVisible) return null;
 
