@@ -1,26 +1,22 @@
 import React from 'react';
 import { TextAtoms } from '../../../atoms/text/Text.Atoms';
-import { TextSizeTypeAtoms } from '../../../atoms/text/Text.type';
+import {
+  TextAtomsProps,
+  TextSizeTypeAtoms,
+} from '../../../atoms/text/Text.type';
 import './BodyText.Ions.css';
 
-type TextProps = {
-  text: string;
-  onClick?: () => void;
-  size?: Extract<TextSizeTypeAtoms, 'extra-small' | 'small' | 'normal'>;
-  rows?: number;
-};
+interface TextProps extends TextAtomsProps {
+  size?: Extract<
+    TextSizeTypeAtoms,
+    'extra-small' | 'small' | 'normal' | 'medium'
+  >;
+}
 
-export const BodyTextIons: React.FC<TextProps> = ({
-  text,
-  onClick,
-  size = 'small',
-  rows,
-}) => (
+export const BodyTextIons: React.FC<TextProps> = (props) => (
   <TextAtoms
-    onClick={onClick}
-    size={size}
+    {...props}
+    size={props.size || 'small'}
     className={'body-text-ions text-colored-black'}
-    text={text}
-    rows={rows}
   />
 );

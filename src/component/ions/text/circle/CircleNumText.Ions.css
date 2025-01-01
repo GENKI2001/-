@@ -1,0 +1,28 @@
+.circle-num-text-ions {
+  color: white;
+  background-color: #383E86;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-num-text-ions.small {
+  width: 20px;
+  height: 20px;
+  font-size: 14px;
+}
+
+.circle-num-text-ions.normal {
+  width: 25px;
+  height: 25px;
+  font-size: 16px;
+}
+
+.circle-num-text-ions.medium {
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+}
+

@@ -1,32 +1,15 @@
 import React from 'react';
 import ButtonAtoms from '../../../../atoms/button/Button.Atoms';
-import { ButtonAtomsSizeType } from '../../../../atoms/button/Button.type';
+import { ButtonAtomsProps } from '../../../../atoms/button/Button.type';
 import '../ButtonFullRound.css';
 import './../../Button.Ions.css';
 
-interface ButtonProps {
-  children: React.ReactNode;
-  onClick?: () => void;
-  disabled?: boolean;
-  isMobile?: boolean;
-  size?: ButtonAtomsSizeType;
-  width?: string | number;
-  padding?: string | number;
-}
-
-const FullRoundWhiteButtonIons: React.FC<ButtonProps> = (props) => {
+const FullRoundWhiteButtonIons: React.FC<ButtonAtomsProps> = (props) => {
   return (
     <ButtonAtoms
-      onClick={props.onClick}
-      disabled={props.disabled}
-      isMobile={props.isMobile}
+      {...props}
       className={'button-full-round button-filled-white'}
-      width={props.width}
-      padding={props.padding}
-      size={props.size}
-    >
-      {props.children}
-    </ButtonAtoms>
+    />
   );
 };
 

@@ -23,7 +23,7 @@ import RoundImgIons from '../ions/img/round/RoundImg.Ions';
 import { BodyTextIons } from '../ions/text/body/BodyText.Ions';
 import { BodyTextBoldIons } from '../ions/text/body/BodyTextBold.Ions';
 import { HomeSubTitleTextIons } from '../ions/text/subtitle/HomeSubTitle.Ions';
-import { TagText } from '../ions/text/tag/TagText.Ions';
+import { TagTextIons } from '../ions/text/tag/TagText.Ions';
 import { HomeTitleTextIons } from '../ions/text/title/HomeTitleText.Ions';
 import { PurpleTitleTextIons } from '../ions/text/title/PurpleTitleText.Ions';
 import DefaultTextFieldIons from '../ions/textfield/DefaultTextField.Ions';
@@ -113,7 +113,7 @@ const HomeTemplate: React.FC<HomeTemplateProps> = () => {
           text="みんなのアイデアを見てみよう"
         />
       </div>
-      <TagText
+      <TagTextIons
         text="タグです"
         size="small"
         onClick={() => {
