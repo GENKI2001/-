@@ -7,13 +7,13 @@ interface ButtonProps extends ButtonAtomsProps {
   selected?: boolean;
 }
 
-const SelectedTabButtonIons: React.FC<ButtonProps> = (props) => {
+const SelectedTabButtonIons: React.FC<ButtonProps> = React.memo((props) => {
   return (
     <ButtonAtoms
       {...props}
       className={`selected-tab-button-ions ${props.selected ? 'selected' : ''}`}
     />
   );
-};
+});
 
 export default SelectedTabButtonIons;

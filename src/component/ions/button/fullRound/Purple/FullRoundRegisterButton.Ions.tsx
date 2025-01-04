@@ -6,7 +6,7 @@ import './../../Button.Ions.css';
 
 const FullRoundRegisterButtonIons: React.FC<
   Omit<ButtonAtomsProps, 'children'>
-> = (props) => {
+> = React.memo((props) => {
   return (
     <ButtonAtoms
       {...props}
@@ -17,6 +17,6 @@ const FullRoundRegisterButtonIons: React.FC<
       新規会員登録
     </ButtonAtoms>
   );
-};
+});
 
 export default FullRoundRegisterButtonIons;

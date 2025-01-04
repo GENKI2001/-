@@ -10,7 +10,7 @@ interface ButtonProps {
   size?: 'small' | 'medium' | 'large';
 }
 
-const CircleFixedPinkButtonIons: React.FC<ButtonProps> = (props) => {
+const CircleFixedPinkButtonIons: React.FC<ButtonProps> = React.memo((props) => {
   return (
     <ButtonAtoms
       onClick={props.onClick}
@@ -22,6 +22,6 @@ const CircleFixedPinkButtonIons: React.FC<ButtonProps> = (props) => {
       {props.children}
     </ButtonAtoms>
   );
-};
+});
 
 export default CircleFixedPinkButtonIons;

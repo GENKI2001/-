@@ -7,13 +7,15 @@ interface ButtonProps extends ButtonAtomsProps {
   selected?: boolean;
 }
 
-const SelectedWhiteRoundButtonIons: React.FC<ButtonProps> = (props) => {
-  return (
-    <ButtonAtoms
-      {...props}
-      className={`selected-white-round-button-ions ${props.selected ? 'selected' : ''}`}
-    />
-  );
-};
+const SelectedWhiteRoundButtonIons: React.FC<ButtonProps> = React.memo(
+  (props) => {
+    return (
+      <ButtonAtoms
+        {...props}
+        className={`selected-white-round-button-ions ${props.selected ? 'selected' : ''}`}
+      />
+    );
+  },
+);
 
 export default SelectedWhiteRoundButtonIons;

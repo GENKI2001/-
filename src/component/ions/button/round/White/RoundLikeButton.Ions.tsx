@@ -5,12 +5,12 @@ import { ButtonAtomsProps } from '../../../../atoms/button/Button.type';
 import '../ButtonRound.css';
 import './RoundLikeButton.Ions.css';
 
-interface ButtonProps extends Omit<ButtonAtomsProps, 'children'> {
+interface ButtonProps extends ButtonAtomsProps {
   numOflikes: number;
   selected?: boolean;
 }
 
-const RoundLikeButtonIons: React.FC<ButtonProps> = (props) => {
+const RoundLikeButtonIons: React.FC<ButtonProps> = React.memo((props) => {
   return (
     <ButtonAtoms
       {...props}
@@ -25,6 +25,6 @@ const RoundLikeButtonIons: React.FC<ButtonProps> = (props) => {
       </span>
     </ButtonAtoms>
   );
-};
+});
 
 export default RoundLikeButtonIons;
