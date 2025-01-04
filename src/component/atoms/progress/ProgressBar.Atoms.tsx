@@ -5,7 +5,7 @@ interface ProgressProps {
   progress: number;
 }
 
-const ProgressBarAtoms: React.FC<ProgressProps> = ({ progress }) => {
+const ProgressBarAtoms: React.FC<ProgressProps> = React.memo(({ progress }) => {
   const clampedProgress = Math.min(Math.max(progress, 0), 100);
 
   return (
@@ -24,6 +24,6 @@ const ProgressBarAtoms: React.FC<ProgressProps> = ({ progress }) => {
       </div>
     </div>
   );
-};
+});
 
 export default ProgressBarAtoms;
