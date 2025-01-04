@@ -5,8 +5,10 @@ interface ProgressProps {
   progress: number;
 }
 
-const DefaultProgressBarIons: React.FC<ProgressProps> = ({ progress }) => {
-  return <ProgressBarAtoms progress={progress} />;
-};
+const DefaultProgressBarIons: React.FC<ProgressProps> = React.memo(
+  ({ progress }) => {
+    return <ProgressBarAtoms progress={progress} />;
+  },
+);
 
 export default DefaultProgressBarIons;
