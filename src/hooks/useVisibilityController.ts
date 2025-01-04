@@ -5,7 +5,7 @@ export const useVisibilityController = (
   animationDuration: number,
 ) => {
   const [isVisible, setIsVisible] = useState(open);
-  const [isClosing, setIsClosing] = useState(false);
+  const [isClosing, setIsClosing] = useState(!open);
 
   useEffect(() => {
     if (open) {
