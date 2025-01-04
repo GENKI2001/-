@@ -13,10 +13,10 @@ interface TextProps extends TextAtomsProps {
   >;
 }
 
-export const BodyTextIons: React.FC<TextProps> = (props) => (
+export const BodyTextIons: React.FC<TextProps> = React.memo((props) => (
   <TextAtoms
     {...props}
     size={props.size || 'small'}
     className={'body-text-ions text-colored-black'}
   />
-);
+));

@@ -8,13 +8,12 @@ type TextProps = {
   size?: Extract<TextSizeTypeAtoms, 'small' | 'normal' | 'medium'>;
 };
 
-export const CircleNumTextIons: React.FC<TextProps> = ({
-  num,
-  size = 'normal',
-}) => (
-  <TextAtoms
-    size={size}
-    className={`circle-num-text-ions ${size}`}
-    text={String(num)}
-  />
+export const CircleNumTextIons: React.FC<TextProps> = React.memo(
+  ({ num, size = 'normal' }) => (
+    <TextAtoms
+      size={size}
+      className={`circle-num-text-ions ${size}`}
+      text={String(num)}
+    />
+  ),
 );

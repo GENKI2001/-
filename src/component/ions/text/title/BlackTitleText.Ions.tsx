@@ -10,10 +10,10 @@ interface TextProps extends TextAtomsProps {
   size?: Extract<TextSizeTypeAtoms, 'medium' | 'large' | 'extra-large'>;
 }
 
-export const BlackTitleTextIons: React.FC<TextProps> = (props) => (
+export const BlackTitleTextIons: React.FC<TextProps> = React.memo((props) => (
   <TextAtoms
     {...props}
     size={props.size || 'large'}
     className={'home-title-text-ions text-colored-black'}
   />
-);
+));
