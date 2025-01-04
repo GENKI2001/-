@@ -5,8 +5,8 @@ interface ImgProps {
   img_src: string;
   alt?: string;
 }
-const RoundImgIons: React.FC<ImgProps> = ({ img_src, alt }) => {
+const RoundImgIons: React.FC<ImgProps> = React.memo(({ img_src, alt }) => {
   return <img src={img_src} alt={alt} className={`round-img-ions`} />;
-};
+});
 
 export default RoundImgIons;

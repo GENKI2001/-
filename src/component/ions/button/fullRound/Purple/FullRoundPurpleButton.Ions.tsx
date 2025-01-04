@@ -4,13 +4,15 @@ import { ButtonAtomsProps } from '../../../../atoms/button/Button.type';
 import '../ButtonFullRound.css';
 import './../../Button.Ions.css';
 
-const FullRoundPurpleButtonIons: React.FC<ButtonAtomsProps> = (props) => {
-  return (
-    <ButtonAtoms
-      {...props}
-      className={'button-full-round button-filled-purple'}
-    />
-  );
-};
+const FullRoundPurpleButtonIons: React.FC<ButtonAtomsProps> = React.memo(
+  (props) => {
+    return (
+      <ButtonAtoms
+        {...props}
+        className={'button-full-round button-filled-purple'}
+      />
+    );
+  },
+);
 
 export default FullRoundPurpleButtonIons;

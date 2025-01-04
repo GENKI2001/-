@@ -14,10 +14,12 @@ interface TextProps extends TextAtomsProps {
   >;
 }
 
-export const BodyTextIonsClickable: React.FC<TextProps> = (props) => (
-  <TextAtoms
-    {...props}
-    size={props.size || 'small'}
-    className={'body-text-ions clickable text-colored-royalblue'}
-  />
+export const BodyTextIonsClickable: React.FC<TextProps> = React.memo(
+  (props) => (
+    <TextAtoms
+      {...props}
+      size={props.size || 'small'}
+      className={'body-text-ions clickable text-colored-royalblue'}
+    />
+  ),
 );

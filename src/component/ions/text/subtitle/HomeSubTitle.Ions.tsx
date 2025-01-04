@@ -10,10 +10,10 @@ interface TextProps extends TextAtomsProps {
   size?: Extract<TextSizeTypeAtoms, 'normal' | 'medium' | 'large'>;
 }
 
-export const HomeSubTitleTextIons: React.FC<TextProps> = (props) => (
+export const HomeSubTitleTextIons: React.FC<TextProps> = React.memo((props) => (
   <TextAtoms
     {...props}
     size={props.size || 'medium'}
     className={'home-subtitle-text-ions'}
   />
-);
+));

@@ -5,17 +5,16 @@ import '../ButtonFullRound.css';
 import './../../Button.Ions.css';
 import './FullRoundLoginButton.Ions.css';
 
-const FullRoundLoginButtonIons: React.FC<Omit<ButtonAtomsProps, 'children'>> = (
-  props,
-) => {
-  return (
-    <ButtonAtoms
-      {...props}
-      className={'button-full-round full-round-login-button-ions'}
-    >
-      ログイン
-    </ButtonAtoms>
-  );
-};
+const FullRoundLoginButtonIons: React.FC<Omit<ButtonAtomsProps, 'children'>> =
+  React.memo((props) => {
+    return (
+      <ButtonAtoms
+        {...props}
+        className={'button-full-round full-round-login-button-ions'}
+      >
+        ログイン
+      </ButtonAtoms>
+    );
+  });
 
 export default FullRoundLoginButtonIons;

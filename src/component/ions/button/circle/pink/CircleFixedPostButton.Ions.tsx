@@ -11,14 +11,14 @@ interface ButtonProps {
   size?: 'small' | 'medium' | 'large';
 }
 
-const CircleFixedPostButtonIons: React.FC<ButtonProps> = (props) => {
+const CircleFixedPostButtonIons: React.FC<ButtonProps> = React.memo((props) => {
   return (
     <ButtonAtoms
       onClick={props.onClick}
       disabled={props.disabled}
       isMobile={props.isMobile}
       className={`button-circle ${props.size ?? 'small'} button-filled-pink post-button-ions`}
-      size={props.size}
+      padding={0}
     >
       <EditIcon
         sx={{
@@ -31,6 +31,6 @@ const CircleFixedPostButtonIons: React.FC<ButtonProps> = (props) => {
       </span>
     </ButtonAtoms>
   );
-};
+});
 
 export default CircleFixedPostButtonIons;
