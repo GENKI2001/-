@@ -12,13 +12,13 @@ describe('TextAtoms', () => {
   // サイズのテスト
   it('指定されたサイズのクラスが適用されること', () => {
     const { container } = render(<TextAtoms text="テキスト" size="small" />);
-    expect(container.firstChild).toHaveClass('text-atoms-small');
+    expect(container.firstChild).toHaveClass('text-atoms small');
   });
 
   // デフォルトサイズのテスト
   it('サイズが指定されていない場合はmediumが適用されること', () => {
     const { container } = render(<TextAtoms text="テキスト" />);
-    expect(container.firstChild).toHaveClass('text-atoms-medium');
+    expect(container.firstChild).toHaveClass('text-atoms medium');
   });
 
   // カスタムクラス名のテスト
