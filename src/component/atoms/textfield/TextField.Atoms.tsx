@@ -13,18 +13,21 @@ const TextFieldAtoms: React.FC<TextFieldAtomsProps> = React.memo(
     type = 'text',
     input_class_name,
     rows,
+    design_type = 'default',
+    size = 'medium',
   }) => {
     const InputComponent = rows ? 'textarea' : 'input';
 
     return (
       <div className="textfield-container">
-        <label className="textfield-label">{label}</label>
+        {label && <label className={`textfield-label ${size}`}>{label}</label>}
         <InputComponent
+          role="textfield-input"
           type={type}
           value={value}
           onChange={onChange}
           placeholder={placeholder}
-          className={`textfield-input ${error ? 'textfield-input-error' : ''} ${input_class_name ?? ''}`}
+          className={`${design_type === 'underline' ? 'textfield-input-underline' : 'textfield-input'} ${error ? 'textfield-input-error' : ''} ${size} ${input_class_name ?? ''}`}
           rows={rows}
         />
         <section className="textfield-error-max-container">

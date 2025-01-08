@@ -134,4 +134,33 @@ describe('TextFieldAtoms', () => {
     );
     expect(container.querySelector('input')).toBeInTheDocument();
   });
+
+  it('design_typeが設定されたら、適切なクラスが設定される', () => {
+    const { container } = render(
+      <TextFieldAtoms
+        label="Test Label"
+        value=""
+        onChange={() => {}}
+        error={null}
+        design_type="underline"
+      />,
+    );
+    const element = screen.getByRole('textfield-input');
+    expect(element).toHaveClass('textfield-input-underline');
+  });
+
+  // サイズが設定されたら、適切なクラスが設定される
+  it('sizeが設定されたら、適切なクラスが設定される', () => {
+    const { container } = render(
+      <TextFieldAtoms
+        label="Test Label"
+        value=""
+        onChange={() => {}}
+        error={null}
+        size="small"
+      />,
+    );
+    const element = screen.getByRole('textfield-input');
+    expect(element).toHaveClass('small');
+  });
 });

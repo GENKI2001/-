@@ -54,4 +54,13 @@ describe('ProgressBarAtoms コンポーネント', () => {
     const progressFill = container.querySelector('.progress-fill');
     expect(progressFill).toHaveStyle({ width: '33.33%' });
   });
+
+  // widthが指定された場合のテスト
+  it('widthが指定された場合、スタイルが正しく適用されること', () => {
+    const { container } = render(
+      <ProgressBarAtoms progress={50} width="200px" />,
+    );
+    const progressBar = container.querySelector('.progress-container');
+    expect(progressBar).toHaveStyle({ width: '200px' });
+  });
 });

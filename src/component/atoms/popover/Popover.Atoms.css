@@ -7,7 +7,6 @@
   background-color: white;
   border-radius: 5px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 5px;
   position: absolute;
   opacity: 0;
   animation: fadeInPopover 0.2s ease 0.1s forwards;
@@ -36,27 +35,74 @@
     opacity: 0;
   }
 }
-
 .popover-top {
   bottom: 100%;
   left: 50%;
-  transform: translate(-50%, 0); /* 初期状態 */
+  transform: translate(-50%, 0);
 }
 
 .popover-bottom {
   top: 100%;
   left: 50%;
-  transform: translate(-50%, 0); /* 初期状態 */
+  transform: translate(-50%, 0);
 }
 
 .popover-left {
   right: 100%;
   top: 50%;
-  transform: translate(0, -50%); /* 初期状態 */
+  transform: translate(0, -50%);
 }
 
 .popover-right {
   left: 100%;
   top: 50%;
-  transform: translate(0, -50%); /* 初期状態 */
+  transform: translate(0, -50%);
+}
+
+.popover-top-left {
+  bottom: 100%;
+  left: 0;
+  transform: translate(0, 0);
+}
+
+.popover-top-right {
+  bottom: 100%;
+  right: 0;
+  transform: translate(0, 0);
+}
+
+.popover-bottom-left {
+  top: 100%;
+  left: 0;
+  transform: translate(0, 0);
+}
+
+.popover-bottom-right {
+  top: 100%;
+  right: 0;
+  transform: translate(0, 0);
+}
+
+.popover-left-top {
+  right: 100%;
+  top: 0;
+  transform: translate(0, 0);
+}
+
+.popover-left-bottom {
+  right: 100%;
+  bottom: 0;
+  transform: translate(0, 0);
+}
+
+.popover-right-top {
+  left: 100%;
+  top: 0;
+  transform: translate(0, 0);
+}
+
+.popover-right-bottom {
+  left: 100%;
+  bottom: 0;
+  transform: translate(0, 0);
 }

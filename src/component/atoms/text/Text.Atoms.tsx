@@ -3,10 +3,10 @@ import './Text.Atoms.css';
 import { TextAtomsProps } from './Text.type';
 
 export const TextAtoms: React.FC<TextAtomsProps> = React.memo(
-  ({ text, className, size = 'medium', rows, onClick }) => (
+  ({ text, className, size = 'medium', rows, onClick, color, bold }) => (
     <span
       onClick={onClick}
-      className={`text-atoms text-atoms-${size} ${className}`}
+      className={`text-atoms ${size} ${color} ${bold ? 'bold' : ''} ${className}`}
       style={{
         cursor: onClick ? 'pointer' : undefined,
         height: rows

@@ -13,7 +13,7 @@ export const FacebookRoundButtonAtoms: React.FC<SNSButtonAtomsProps> =
     return (
       <FacebookLoginButton
         align="center"
-        className={`sns-round-button-atoms-${props.size ?? 'medium'}`}
+        className={`sns-round-button-atoms ${props.size ?? 'medium'}`}
         text={props.text ?? 'Facebook でログイン'}
         onClick={props.onClick}
       />
@@ -25,7 +25,7 @@ export const GoogleRoundButtonAtoms: React.FC<SNSButtonAtomsProps> = React.memo(
     return (
       <GoogleLoginButton
         align="center"
-        className={`sns-round-button-atoms-${props.size ?? 'medium'}`}
+        className={`sns-round-button-atoms ${props.size ?? 'medium'}`}
         text={props.text ?? 'Google でログイン'}
         onClick={props.onClick}
       />
@@ -38,7 +38,7 @@ export const XRoundButtonAtoms: React.FC<SNSButtonAtomsProps> = React.memo(
     return (
       <XLoginButton
         align="center"
-        className={`sns-round-button-atoms-${props.size ?? 'medium'}`}
+        className={`sns-round-button-atoms ${props.size ?? 'medium'}`}
         text={props.text ?? 'X でログイン'}
         onClick={props.onClick}
       />
@@ -51,7 +51,7 @@ export const InstagramRoundButtonAtoms: React.FC<SNSButtonAtomsProps> =
     return (
       <InstagramLoginButton
         align="center"
-        className={`sns-round-button-atoms-${props.size ?? 'medium'}`}
+        className={`sns-round-button-atoms ${props.size ?? 'medium'}`}
         text={props.text ?? 'Instagram でログイン'}
         onClick={props.onClick}
       />

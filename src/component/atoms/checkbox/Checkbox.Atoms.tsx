@@ -3,30 +3,32 @@ import './Checkbox.Atoms.css';
 import { CheckboxAtomsProps } from './Checkbox.type';
 
 const CheckboxAtoms: React.FC<CheckboxAtomsProps> = React.memo(
-  ({ label, checked, onChange, disabled = false }) => {
+  ({ label, checked, onChange, disabled = false, size = 'medium' }) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      if (!disabled) {
+        onChange();
+      }
+    };
+
     return (
-      <div
-        className="checkbox-atoms-container"
-        onClick={() => {
-          if (!disabled) {
-            onChange();
-          }
-        }}
+      <label
+        className={`checkbox-atoms-container ${size} ${disabled ? 'disabled' : ''}`}
       >
         <input
           type="checkbox"
           data-testid="checkbox-atoms-input"
           checked={checked}
+          onChange={handleChange}
           disabled={disabled}
           className="checkbox-atoms-input"
         />
-        <label
-          className="checkbox-atoms-label"
+        <span
+          className={`checkbox-atoms-label ${size}`}
           data-testid="checkbox-atoms-label"
         >
           {label}
-        </label>
-      </div>
+        </span>
+      </label>
     );
   },
 );

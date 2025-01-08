@@ -37,6 +37,11 @@ describe('SelectorAtoms', () => {
     expect(screen.getByText('選択してください')).toBeInTheDocument();
   });
 
+  it('ラベルが正しく表示されること', () => {
+    render(<SelectorAtoms {...defaultProps} label="ラベル" />);
+    expect(screen.getByText('ラベル')).toBeInTheDocument();
+  });
+
   test('無効状態が正しく反映される', () => {
     render(<SelectorAtoms {...defaultProps} disabled={true} />);
 

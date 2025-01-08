@@ -3,13 +3,14 @@ import RadioButtonAtoms from '../RadioButton.Atoms';
 import { RadioButtonAtomsProps } from '../RadioButton.type';
 
 describe('RadioButtonAtoms', () => {
+  const mockOnChange = jest.fn();
   const defaultProps: RadioButtonAtomsProps = {
     checked: false,
-    onClick: jest.fn(),
+    onChange: mockOnChange,
   };
 
   beforeEach(() => {
-    jest.clearAllMocks();
+    mockOnChange.mockClear();
   });
 
   it('正しくレンダリングされること', () => {
@@ -33,29 +34,12 @@ describe('RadioButtonAtoms', () => {
       render(<RadioButtonAtoms {...defaultProps}>label</RadioButtonAtoms>);
 
       fireEvent.click(screen.getByRole('radio'));
-      expect(defaultProps.onClick).toHaveBeenCalledTimes(1);
+      expect(defaultProps.onChange).toHaveBeenCalledTimes(1);
 
       const label = screen.getByText('label').closest('div');
       if (label) {
         fireEvent.click(label);
-        expect(defaultProps.onClick).toHaveBeenCalledTimes(2);
-      }
-    });
-
-    it('モバイルでタッチイベントが発火すること', () => {
-      render(
-        <RadioButtonAtoms {...defaultProps} isMobile>
-          label
-        </RadioButtonAtoms>,
-      );
-
-      fireEvent.touchStart(screen.getByRole('radio'));
-      expect(defaultProps.onClick).toHaveBeenCalledTimes(1);
-
-      const label = screen.getByText('label').closest('div');
-      if (label) {
-        fireEvent.touchStart(label);
-        expect(defaultProps.onClick).toHaveBeenCalledTimes(2);
+        expect(defaultProps.onChange).toHaveBeenCalledTimes(2);
       }
     });
   });

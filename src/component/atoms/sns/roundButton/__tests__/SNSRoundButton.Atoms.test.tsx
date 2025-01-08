@@ -22,7 +22,7 @@ describe('FacebookRoundButtonAtoms', () => {
       />,
     );
     const buttonElement = screen.getByText(customText).closest('button');
-    expect(buttonElement).toHaveClass('sns-round-button-atoms-small');
+    expect(buttonElement).toHaveClass('sns-round-button-atoms small');
   });
 
   // クリックイベントのテスト

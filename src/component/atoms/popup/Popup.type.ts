@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-export type PopupAtomsSizeType =
+export type PopupSizeType =
   | 'extra-small'
   | 'small'
   | 'normal'
@@ -12,5 +12,5 @@ export type PopupAtomsProps = {
   open: boolean;
   onClose: () => void;
   children: ReactNode;
-  size?: PopupAtomsSizeType;
+  size?: PopupSizeType;
 };

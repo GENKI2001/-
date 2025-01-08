@@ -1,7 +1,9 @@
 import { ChangeEvent } from 'react';
 
+export type TextFieldSizeType = 'small' | 'medium' | 'large';
+
 export interface TextFieldAtomsProps {
-  label: string;
+  label: React.ReactNode | null;
   value: string;
   onChange: (
     e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>,
@@ -12,4 +14,6 @@ export interface TextFieldAtomsProps {
   type?: string;
   input_class_name?: string;
   rows?: number;
+  design_type?: 'default' | 'underline';
+  size?: TextFieldSizeType;
 }
