@@ -6,6 +6,6 @@ interface TextProps extends TextAtomsProps {
   size?: TextSizeType;
 }
 
-export const BlackTitleTextIons: React.FC<TextProps> = React.memo((props) => (
-  <TextAtoms {...props} size={props.size || 'large'} bold color="black" />
+export const BodySubTextIons: React.FC<TextProps> = React.memo((props) => (
+  <TextAtoms {...props} size={props.size || 'small'} color="grey" />
 ));

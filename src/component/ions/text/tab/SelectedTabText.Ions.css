@@ -1,0 +1,9 @@
+.selected-tab-text-ions{
+  padding: 10px 5px;
+  transition: border-bottom 0.3s ease;
+}
+
+.selected-tab-text-ions.selected{
+  font-weight: bold;
+  border-bottom: 3px solid #383E86;
+}

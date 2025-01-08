@@ -1,0 +1,40 @@
+.chat-text-ions {
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px ;
+}
+
+.chat-text-ions.tiny {
+  border-radius: 5px;
+  padding: 3px ;
+}
+.chat-text-ions.extra-small {
+  border-radius: 8px;
+  padding: 5px ;
+}
+.chat-text-ions.small {
+  border-radius: 12px;
+  padding: 8px ;
+}
+.chat-text-ions.normal {
+  border-radius: 13.5px;
+  padding: 9px ;
+}
+.chat-text-ions.medium, .chat-text-ions.large, .chat-text-ions.bit-large, .chat-text-ions.very-large, .chat-text-ions.extra-large {
+  border-radius: 15px;
+  padding: 10px ;
+}
+
+.chat-text-ions.left{
+  color: rgb(43, 43, 43);
+  background-color: rgb(235, 240, 245);
+  border-bottom-left-radius: 0px;
+}
+
+.chat-text-ions.right{
+  color: white;
+  background-color: #383E86;
+  border-bottom-right-radius: 0px;
+}

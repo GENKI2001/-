@@ -1,22 +1,11 @@
 import React from 'react';
 import { TextAtoms } from '../../../atoms/text/Text.Atoms';
-import {
-  TextAtomsProps,
-  TextSizeTypeAtoms,
-} from '../../../atoms/text/Text.type';
-import './BodyText.Ions.css';
+import { TextAtomsProps, TextSizeType } from '../../../atoms/text/Text.type';
 
 interface TextProps extends TextAtomsProps {
-  size?: Extract<
-    TextSizeTypeAtoms,
-    'extra-small' | 'small' | 'normal' | 'medium'
-  >;
+  size?: TextSizeType;
 }
 
 export const BodyTextBoldIons: React.FC<TextProps> = React.memo((props) => (
-  <TextAtoms
-    {...props}
-    size={props.size || 'small'}
-    className={'body-text-bold-ions text-colored-black'}
-  />
+  <TextAtoms {...props} size={props.size || 'small'} color="black" bold />
 ));
