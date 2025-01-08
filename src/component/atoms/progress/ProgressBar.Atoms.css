@@ -1,6 +1,5 @@
 .progress-container {
   width: 100%;
-  max-width: 32rem;
 }
 
 .progress-bar {
@@ -9,6 +8,18 @@
   background-color: #e5e7eb;
   border-radius: 9999px;
   overflow: hidden;
+}
+
+.progress-bar.small {
+  height: 12px;
+}
+
+.progress-bar.medium {
+  height: 16px;
+}
+
+.progress-bar.large {
+  height: 20px;
 }
 
 .progress-fill {
