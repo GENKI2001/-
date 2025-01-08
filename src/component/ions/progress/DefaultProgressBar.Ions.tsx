@@ -1,13 +1,10 @@
 import React from 'react';
 import ProgressBarAtoms from '../../atoms/progress/ProgressBar.Atoms';
+import { ProgressAtomsProps } from '../../atoms/progress/ProgressBar.type';
 
-interface ProgressProps {
-  progress: number;
-}
-
-const DefaultProgressBarIons: React.FC<ProgressProps> = React.memo(
-  ({ progress }) => {
-    return <ProgressBarAtoms progress={progress} />;
+const DefaultProgressBarIons: React.FC<ProgressAtomsProps> = React.memo(
+  (props) => {
+    return <ProgressBarAtoms {...props} />;
   },
 );
 
