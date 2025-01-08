@@ -4,17 +4,11 @@ import './IconImg.Ions.css';
 interface ImgProps {
   img_src: string;
   alt?: string;
-  size?: 'small' | 'medium' | 'large';
+  size?: 'extra-small' | 'small' | 'medium' | 'large';
 }
 const IconImgIons: React.FC<ImgProps> = React.memo(
   ({ img_src, alt, size = 'medium' }) => {
-    return (
-      <img
-        src={img_src}
-        alt={alt}
-        className={`icon-img icon-img-ions-${size}`}
-      />
-    );
+    return <img src={img_src} alt={alt} className={`icon-img-ions ${size}`} />;
   },
 );
 
