@@ -5,7 +5,7 @@ import { ButtonAtomsProps } from '../../../../atoms/button/Button.type';
 import '../ButtonRound.css';
 import './RoundLikeButton.Ions.css';
 
-interface ButtonProps extends ButtonAtomsProps {
+interface ButtonProps extends Omit<ButtonAtomsProps, 'children'> {
   numOflikes: number;
   selected?: boolean;
 }
