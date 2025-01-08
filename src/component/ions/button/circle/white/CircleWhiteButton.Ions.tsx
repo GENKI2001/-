@@ -7,16 +7,15 @@ interface ButtonProps {
   children: React.ReactNode;
   onClick?: () => void;
   disabled?: boolean;
-  isMobile?: boolean;
   size?: ButtonSizeType;
 }
 
-const CircleFixedPinkButtonIons: React.FC<ButtonProps> = React.memo((props) => {
+const CircleWhiteButtonIons: React.FC<ButtonProps> = React.memo((props) => {
   return (
     <ButtonAtoms
       onClick={props.onClick}
       disabled={props.disabled}
-      className={`button-circle-ions ${props.size ?? 'small'} button-filled-pink`}
+      className={`button-circle-ions ${props.size ?? 'small'} button-filled-white`}
       size={props.size}
     >
       {props.children}
@@ -24,4 +23,4 @@ const CircleFixedPinkButtonIons: React.FC<ButtonProps> = React.memo((props) => {
   );
 });
 
-export default CircleFixedPinkButtonIons;
+export default CircleWhiteButtonIons;

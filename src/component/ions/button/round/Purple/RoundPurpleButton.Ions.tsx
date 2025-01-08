@@ -6,7 +6,10 @@ import '../ButtonRound.css';
 const RoundPurpleButtonIons: React.FC<ButtonAtomsProps> = React.memo(
   (props) => {
     return (
-      <ButtonAtoms {...props} className={'button-round button-filled-purple'} />
+      <ButtonAtoms
+        {...props}
+        className={'button-round-ions button-filled-purple'}
+      />
     );
   },
 );

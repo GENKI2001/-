@@ -1,22 +1,57 @@
 .post-button-ions {
   position: fixed;
+  z-index: 100;
   bottom: 50px;
   right: 50px;
 }
 
-.post-button-text {
+.post-button-ions.mobile {
+  bottom: 20px;
+  right: 20px;
+}
+
+.post-button-ions-text {
   font-weight: bold;
   color: white;
 }
 
-.post-button-text.small {
+.post-button-ions-text.extra-small {
+  font-size: 9px;
+}
+.post-button-ions-text.small {
   font-size: 10px;
 }
-
-.post-button-text.medium {
-  font-size: 12px;
+.post-button-ions-text.normal {
+  font-size: 11.5px;
+}
+.post-button-ions-text.medium {
+  font-size: 13px;
+}
+.post-button-ions-text.large {
+  font-size: 16px;
+}
+.post-button-ions-text.extra-large {
+  font-size: 18px;
 }
 
-.post-button-text.large {
-  font-size: 16px;
+.post-button-ions-icon {
+  color: white;
+}
+.post-button-ions-icon.extra-small {
+  font-size: 18px;
+}
+.post-button-ions-icon.small {
+  font-size: 22px;
+}
+.post-button-ions-icon.normal {
+  font-size: 25px;
+}
+.post-button-ions-icon.medium {
+  font-size: 28px;
+}
+.post-button-ions-icon.large {
+  font-size: 32px;
+}
+.post-button-ions-icon.extra-large {
+  font-size: 36px;
 }

@@ -14,12 +14,12 @@ const RoundLikeButtonIons: React.FC<ButtonProps> = React.memo((props) => {
   return (
     <ButtonAtoms
       {...props}
-      className={`button-round round-like-button-ions ${props.selected ? 'selected' : ''} `}
+      className={`button-round-ions round-like-button-ions ${props.selected ? 'selected' : ''} `}
     >
       <FavoriteIcon />
-      <span className="like-button-text">いいね</span>
+      <span>いいね</span>
       <span
-        className={`num-of-likes ${props.disabled ? 'disabled' : props.selected ? 'selected' : ''}`}
+        className={`like-button-ions-num-of-likes ${props.disabled ? 'disabled' : props.selected ? 'selected' : ''}`}
       >
         {props.numOflikes}
       </span>

@@ -1,6 +1,7 @@
 import EditIcon from '@mui/icons-material/Edit';
 import React from 'react';
 import ButtonAtoms from '../../../../atoms/button/Button.Atoms';
+import { ButtonSizeType } from '../../../../atoms/button/Button.type';
 import '../ButtonCircle.css';
 import './CircleFixedPostButton.Ions.css';
 
@@ -8,7 +9,7 @@ interface ButtonProps {
   onClick: () => void;
   disabled?: boolean;
   isMobile?: boolean;
-  size?: 'small' | 'medium' | 'large';
+  size?: ButtonSizeType;
 }
 
 const CircleFixedPostButtonIons: React.FC<ButtonProps> = React.memo((props) => {
@@ -16,17 +17,11 @@ const CircleFixedPostButtonIons: React.FC<ButtonProps> = React.memo((props) => {
     <ButtonAtoms
       onClick={props.onClick}
       disabled={props.disabled}
-      isMobile={props.isMobile}
-      className={`button-circle ${props.size ?? 'small'} button-filled-pink post-button-ions`}
+      className={`button-circle-ions ${props.size ?? 'small'} button-filled-pink post-button-ions ${props.isMobile ? 'mobile' : ''}`}
       padding={0}
     >
-      <EditIcon
-        sx={{
-          fontSize:
-            props.size === 'small' ? 22 : props.size === 'medium' ? 28 : 32,
-        }}
-      />
-      <span className={`post-button-text ${props.size ?? 'small'}`}>
+      <EditIcon className="post-button-ions-icon" />
+      <span className={`post-button-ions-text ${props.size ?? 'small'}`}>
         投稿する
       </span>
     </ButtonAtoms>
