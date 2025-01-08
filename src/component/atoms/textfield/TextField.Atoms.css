@@ -1,12 +1,25 @@
 .textfield-container {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .textfield-label {
   font-size: 14px;
   margin-bottom: 8px;
   color: #333;
+}
+.textfield-label.small {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+.textfield-input.medium {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+.textfield-input.large {
+  padding: 16px;
+  font-size: 10px;
 }
 
 .textfield-input {
@@ -18,8 +31,44 @@
   transition: border-color 0.3s ease;
 }
 
+.textfield-input.small {
+  padding: 5px;
+  font-size: 12px;
+}
+.textfield-input.medium {
+  padding: 7px;
+  font-size: 14px;
+}
+.textfield-input.large {
+  padding: 12px;
+  font-size: 15px;
+}
+
 .textfield-input:focus {
   border-color: #007bff;
+}
+
+/* 下線のスタイルを適用したテキストフィールド */
+.textfield-input-underline {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  font-size: 16px;
+  padding: 4px 0;
+  outline: none;
+  width: 100%;
+  background: transparent;
+  transition: border-color 0.3s;
+}
+
+/* フォーカス時のスタイル */
+.textfield-input-underline:focus {
+  border-bottom: 1px solid #007BFF; /* フォーカス時の色 */
+}
+
+.textfield-input-underline::placeholder {
+  font-size: 14px; /* フォントサイズを変更 */
+  color: #aaa; /* プレースホルダーの色もカスタマイズ可能 */
+  opacity: 1; /* プレースホルダーの透明度を調整 */
 }
 
 .textfield-error-max-container {
