@@ -14,7 +14,7 @@ const ImgLogoIons: React.FC<ImgProps> = React.memo(
         src={img_src}
         alt={alt}
         onClick={onClick}
-        className={`img-logo-ions-${size} ${onClick ? 'clickable' : ''}`}
+        className={`img-logo-ions ${size} ${onClick ? 'clickable' : ''}`}
       />
     );
   },

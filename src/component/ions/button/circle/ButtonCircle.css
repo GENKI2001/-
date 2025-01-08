@@ -1,4 +1,4 @@
-.button-circle {
+.button-circle-ions {
   border-radius: 50%;
   display: flex;
   font-weight: bold;
@@ -7,20 +7,37 @@
   align-items: center;
   padding: 0;
   cursor: pointer;
+  border-color: transparent;
   transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.button-circle.small {
-  width: 55px;
-  height: 55px;
+.button-circle-ions.extra-small {
+  font-size: 16px;
+  width: 35px;
+  height: 35px;
 }
 
-.button-circle.medium {
-  width: 70px;
-  height: 70px;
+.button-circle-ions.small {
+  width: 65px;
+  height: 65px;
 }
 
-.button-circle.large {
+.button-circle-ions.normal {
+  width: 65px;
+  height: 65px;
+}
+
+.button-circle-ions.medium {
+  width: 80px;
+  height: 80px;
+}
+
+.button-circle-ions.large {
+  width: 100px;
+  height: 100px;
+}
+
+.button-circle-ions.extra-large {
   width: 100px;
   height: 100px;
 }

@@ -12,6 +12,7 @@ const SelectedTabButtonIons: React.FC<ButtonProps> = React.memo((props) => {
     <ButtonAtoms
       {...props}
       className={`selected-tab-button-ions ${props.selected ? 'selected' : ''}`}
+      size={props.size || 'normal'}
     />
   );
 });

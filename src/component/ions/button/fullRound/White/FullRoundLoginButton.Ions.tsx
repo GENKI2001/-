@@ -10,7 +10,7 @@ const FullRoundLoginButtonIons: React.FC<Omit<ButtonAtomsProps, 'children'>> =
     return (
       <ButtonAtoms
         {...props}
-        className={'button-full-round full-round-login-button-ions'}
+        className={'button-full-round-ions full-round-login-button-ions'}
       >
         ログイン
       </ButtonAtoms>

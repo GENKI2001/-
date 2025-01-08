@@ -9,7 +9,7 @@ const FullRoundPurpleButtonIons: React.FC<ButtonAtomsProps> = React.memo(
     return (
       <ButtonAtoms
         {...props}
-        className={'button-full-round button-filled-purple'}
+        className={'button-full-round-ions button-filled-purple'}
       />
     );
   },

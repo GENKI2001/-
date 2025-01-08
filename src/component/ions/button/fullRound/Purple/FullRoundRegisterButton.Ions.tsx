@@ -11,7 +11,7 @@ const FullRoundRegisterButtonIons: React.FC<
     <ButtonAtoms
       {...props}
       className={
-        'button-full-round button-filled-purple round-register-button-ions'
+        'button-full-round-ions button-filled-purple round-register-button-ions'
       }
     >
       新規会員登録
