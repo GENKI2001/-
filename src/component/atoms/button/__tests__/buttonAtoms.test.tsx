@@ -1,15 +1,11 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import ButtonAtoms from '../Button.Atoms';
-import { ButtonAtomsSizeType } from '../Button.type';
+import { ButtonSizeType } from '../Button.type';
 
 describe('ButtonAtoms component', () => {
-  it('(PC版) クリックした時にonClickが1回作動する。', () => {
+  it('クリックした時にonClickが1回作動する。', () => {
     const handleClick = jest.fn();
-    render(
-      <ButtonAtoms isMobile={false} onClick={handleClick}>
-        Click Me
-      </ButtonAtoms>,
-    );
+    render(<ButtonAtoms onClick={handleClick}>Click Me</ButtonAtoms>);
 
     const buttonElement = screen.getByRole('button');
     fireEvent.click(buttonElement);
@@ -17,21 +13,7 @@ describe('ButtonAtoms component', () => {
     expect(handleClick).toHaveBeenCalledTimes(1);
   });
 
-  it('(モバイル版) クリックした時にonClickが1回作動する。内部ではonTouchが走っている。', () => {
-    const handleClick = jest.fn();
-    render(
-      <ButtonAtoms isMobile onClick={handleClick}>
-        Click Me
-      </ButtonAtoms>,
-    );
-
-    const buttonElement = screen.getByRole('button');
-    fireEvent.touchStart(buttonElement);
-
-    expect(handleClick).toHaveBeenCalledTimes(1);
-  });
-
-  it('(PC版) クリックした時にdisabledの場合はonClickが作動しない', () => {
+  it('クリックした時にdisabledの場合はonClickが作動しない', () => {
     const handleClick = jest.fn();
     render(
       <ButtonAtoms onClick={handleClick} disabled>
@@ -41,20 +23,6 @@ describe('ButtonAtoms component', () => {
 
     const buttonElement = screen.getByRole('button');
     fireEvent.click(buttonElement);
-
-    expect(handleClick).not.toHaveBeenCalled();
-  });
-
-  it('(モバイル版) クリックした時にdisabledの場合はonClickが作動しない', () => {
-    const handleClick = jest.fn();
-    render(
-      <ButtonAtoms isMobile onClick={handleClick} disabled>
-        Disabled
-      </ButtonAtoms>,
-    );
-
-    const buttonElement = screen.getByRole('button');
-    fireEvent.touchStart(buttonElement);
 
     expect(handleClick).not.toHaveBeenCalled();
   });
@@ -83,6 +51,18 @@ describe('ButtonAtoms component', () => {
     expect(buttonElement).toHaveTextContent(buttonText);
   });
 
+  it('sizeが正しく適用される', () => {
+    const size: ButtonSizeType = 'large';
+    render(
+      <ButtonAtoms onClick={() => {}} size={size}>
+        Large Button
+      </ButtonAtoms>,
+    );
+
+    const buttonElement = screen.getByRole('button');
+    expect(buttonElement).toHaveClass(size);
+  });
+
   it('widthが正しく適用される', () => {
     const width = '100px';
     render(
@@ -95,6 +75,18 @@ describe('ButtonAtoms component', () => {
     expect(buttonElement).toHaveStyle({ width });
   });
 
+  it('heightが正しく適用される', () => {
+    const height = '100px';
+    render(
+      <ButtonAtoms onClick={() => {}} height={height}>
+        Height Button
+      </ButtonAtoms>,
+    );
+
+    const buttonElement = screen.getByRole('button');
+    expect(buttonElement).toHaveStyle({ height });
+  });
+
   it('paddingが正しく適用される', () => {
     const padding = '10px';
     render(
@@ -105,17 +97,5 @@ describe('ButtonAtoms component', () => {
 
     const buttonElement = screen.getByRole('button');
     expect(buttonElement).toHaveStyle({ padding });
-  });
-
-  it('sizeが正しく適用される', () => {
-    const size: ButtonAtomsSizeType = 'large';
-    render(
-      <ButtonAtoms onClick={() => {}} size={size}>
-        Large Button
-      </ButtonAtoms>,
-    );
-
-    const buttonElement = screen.getByRole('button');
-    expect(buttonElement).toHaveClass(size);
   });
 });

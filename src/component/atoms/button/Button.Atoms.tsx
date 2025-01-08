@@ -10,18 +10,17 @@ const ButtonAtoms: React.FC<ButtonAtomsProps> = React.memo(
     onClick,
     className = '',
     disabled = false,
-    isMobile = false,
     size = 'small',
     width,
+    height,
     padding,
   }) => {
     return (
       <button
-        onTouchStart={isMobile ? (disabled ? undefined : onClick) : undefined}
-        onClick={isMobile ? undefined : disabled ? undefined : onClick}
+        onClick={onClick}
         disabled={disabled}
         className={`button-atoms ${size} ${className}`}
-        style={{ width, padding }}
+        style={{ width, padding, height }}
       >
         {children}
       </button>

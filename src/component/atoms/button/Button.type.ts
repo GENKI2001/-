@@ -5,13 +5,13 @@ export type ButtonAtomsProps = {
   onClick?: () => void;
   className?: string;
   disabled?: boolean;
-  isMobile?: boolean;
-  size?: ButtonAtomsSizeType;
+  size?: ButtonSizeType;
   width?: string | number;
+  height?: string | number;
   padding?: string | number;
 };
 
-export type ButtonAtomsSizeType =
+export type ButtonSizeType =
   | 'extra-small'
   | 'small'
   | 'normal'
