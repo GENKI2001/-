@@ -1,7 +1,17 @@
 .checkbox-atoms-container {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 5px;
+  cursor: pointer;
+}
+.checkbox-atoms-container.small {
+  gap: 2px;
+}
+.checkbox-atoms-container.medium {
+  gap: 5px;
+}
+.checkbox-atoms-container.large {
+  gap: 8px;
 }
 
 .checkbox-atoms-input {
@@ -12,8 +22,8 @@
   border-color: #d1d5db;
   border: 1px solid grey;
   border-radius: 0.25rem;
-  cursor: pointer;
   position: relative;
+  cursor: pointer;
 }
 
 .checkbox-atoms-input:checked {
@@ -35,7 +45,6 @@
 }
 
 .checkbox-atoms-input:disabled {
-  cursor: not-allowed;
   background-color: #e5e7eb;
   border-color: #d1d5db;
 }
@@ -45,13 +54,20 @@
 }
 
 .checkbox-atoms-label {
-  font-size: 0.875rem;
+  font-size: 14px;
   color: #374151;
-  user-select: none;
   cursor: pointer;
+}
+.checkbox-atoms-label.small {
+  font-size: 12px;
+}
+.checkbox-atoms-label.medium {
+  font-size: 14px;
+}
+.checkbox-atoms-label.large {
+  font-size: 16px;
 }
 
 .checkbox-atoms-label:disabled {
-  cursor: not-allowed;
   color: #9ca3af;
 }
