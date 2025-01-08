@@ -1,9 +1,9 @@
-export type RadioButtonSizeTypeAtoms = 'small' | 'medium' | 'large';
+export type RadioButtonSizeType = 'small' | 'medium' | 'large';
 
 export type RadioButtonAtomsProps = {
   checked: boolean;
-  onClick: () => void;
+  onChange: () => void;
   isMobile?: boolean;
-  size?: RadioButtonSizeTypeAtoms;
+  size?: RadioButtonSizeType;
   children?: React.ReactNode;
 };

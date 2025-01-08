@@ -3,24 +3,17 @@ import './RadioButton.Atoms.css';
 import { RadioButtonAtomsProps } from './RadioButton.type';
 
 const RadioButtonAtoms: React.FC<RadioButtonAtomsProps> = React.memo(
-  ({ checked, onClick, isMobile, size = 'small', children }) => {
+  ({ checked, onChange, size = 'small', children }) => {
     return (
-      <section className="radio-button-wrapper">
+      <label className={`radio-button-wrapper`}>
         <input
           type="radio"
           checked={checked}
+          onChange={onChange}
           className={`radio-input ${size}`}
-          onClick={isMobile ? undefined : onClick}
-          onTouchStart={isMobile ? onClick : undefined}
         />
-        <div
-          className={`radio-button-label`}
-          onClick={isMobile ? undefined : onClick}
-          onTouchStart={isMobile ? onClick : undefined}
-        >
-          {children}
-        </div>
-      </section>
+        <div className={`radio-button-label`}>{children}</div>
+      </label>
     );
   },
 );

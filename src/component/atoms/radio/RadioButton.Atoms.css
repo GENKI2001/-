@@ -21,7 +21,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
+  background-color: #3A85DC;
+  /* background: linear-gradient(to right, #89EAD8, #3A85DC); */
   border-radius: 50%;
 }
 
@@ -55,12 +56,16 @@
 
 
 .radio-input:checked {
-  border-color: #383E86;
-  background-color: #383E86;
+  border-color: #60a1ed;
+  background-color: white;
 }
 
 .radio-button-label {
   flex: 1;
   cursor: pointer;
   padding-left: 10px;
+}
+
+.radio-button-label.small {
+  padding-left: 5px;
 }
