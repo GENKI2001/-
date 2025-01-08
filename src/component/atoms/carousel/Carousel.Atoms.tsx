@@ -3,7 +3,8 @@ import { BannerCarouselDotButton } from './buttons/Carousel.DotButton.Atoms';
 import './style/EmblaCarousel.css';
 import { useCarousel } from './useCarousel.hooks';
 
-interface CarouselProps {
+export interface CarouselAtomsProps {
+  isTwoRows?: boolean;
   isBanner?: boolean;
   delay?: number;
   displayButton?: boolean;
@@ -25,7 +26,8 @@ interface CarouselProps {
   disableScroll?: boolean;
 }
 
-const CarouselAtoms: React.FC<CarouselProps> = ({
+const CarouselAtoms: React.FC<CarouselAtomsProps> = ({
+  isTwoRows,
   isBanner,
   displayButton = true,
   playOnInit,
@@ -70,9 +72,12 @@ const CarouselAtoms: React.FC<CarouselProps> = ({
     return null;
   };
 
+  const indexArray = Array.from({ length: items.length }, (_, index) => index);
+
   const containerClass = isBanner ? 'banner' : 'embla';
   const viewportClass = `${containerClass}__viewport`;
   const slideContainerClass = `${containerClass}__container`;
+  const slidesColumnClass = `${containerClass}__slides_column`;
   const slideClass = `${containerClass}__slide`;
   const slideNumberClass = `${containerClass}__slide__number`;
 
@@ -88,22 +93,50 @@ const CarouselAtoms: React.FC<CarouselProps> = ({
     >
       <div className={viewportClass} ref={emblaRef}>
         <div className={slideContainerClass}>
-          {items.map((item, index) => (
-            <div
-              className={slideClass}
-              key={index}
-              style={{
-                opacity: otherTransparent
-                  ? index !== selectedIndex
-                    ? 0.2
-                    : 1
-                  : undefined,
-                transition: 'opacity 0.2s ease-in-out',
-              }}
-            >
-              <div className={slideNumberClass}>{item}</div>
-            </div>
-          ))}
+          {isTwoRows
+            ? indexArray.map((num: number, index: number) => {
+                if (index % 2 !== 0) return;
+                return (
+                  <div className={slideClass}>
+                    {[0, 1].map((row_index: number) =>
+                      index + row_index >= items.length ? null : (
+                        <div
+                          key={`row1-${index}`}
+                          style={{
+                            opacity: otherTransparent
+                              ? index !== selectedIndex
+                                ? 0.2
+                                : 1
+                              : undefined,
+                            transition: 'opacity 0.2s ease-in-out',
+                          }}
+                        >
+                          <div className={slideNumberClass}>
+                            {items[index + row_index]}
+                          </div>
+                        </div>
+                      ),
+                    )}
+                  </div>
+                );
+              })
+            : /* 1行表示 */
+              items.map((item, index) => (
+                <div
+                  className={slideClass}
+                  key={index}
+                  style={{
+                    opacity: otherTransparent
+                      ? index !== selectedIndex
+                        ? 0.2
+                        : 1
+                      : undefined,
+                    transition: 'opacity 0.2s ease-in-out',
+                  }}
+                >
+                  <div className={slideNumberClass}>{item}</div>
+                </div>
+              ))}
         </div>
       </div>
 
