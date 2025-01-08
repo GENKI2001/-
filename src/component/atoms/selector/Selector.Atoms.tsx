@@ -7,7 +7,7 @@ const SelectorAtoms: React.FC<SelectorAtomsProps> = React.memo(
   ({
     options = [],
     value = '',
-    onChange = () => console.log('onChange'),
+    onChange,
     label,
     placeholder = '選択してください',
     disabled = false,
@@ -57,7 +57,7 @@ const SelectorAtoms: React.FC<SelectorAtomsProps> = React.memo(
                   onMouseLeave={() => setHighlightedIndex(null)}
                   onClick={() => !option.disabled && handleOptionClick(option)}
                 >
-                  <span className="block truncate">{option.label}</span>
+                  <span className="option-text">{option.label}</span>
                 </li>
               ))}
             </ul>

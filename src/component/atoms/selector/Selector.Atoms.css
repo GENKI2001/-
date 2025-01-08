@@ -1,6 +1,6 @@
 .relative {
   position: relative;
-  width: 100%;
+  min-width: 200px;
 }
 
 .selector-label {
@@ -98,4 +98,9 @@
 
 .hiddenInput {
   display: none;
+}
+
+.option-text {
+  font-size: 14px;
+  color: #333;
 }
